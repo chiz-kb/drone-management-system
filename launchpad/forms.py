@@ -1,4 +1,7 @@
 
+import json
+
+import geojson
 from registry.models import AircraftMasterComponent, ManufacturerPart, Person, Address, Operator, Aircraft, Company, Firmware, Contact, Pilot, Activity, Authorization, AircraftDetail, AircraftComponent,AircraftModel,AircraftAssembly,SupplierPart, MasterComponentAssembly
 from gcs_operations.models import FlightOperation, FlightLog, FlightPlan, FlightPermission
 from supply_chain_operations.models import Incident
@@ -618,12 +621,15 @@ class CompanyCreateForm(forms.ModelForm):
                         
                         FloatingField("role"),
                         FloatingField("country"),
-                        ),
-                    AccordionGroup("Optional Information",
                         FloatingField("documents"),
                         FloatingField("vat_number"),
                         FloatingField("insurance_number"),
-                        ),                                 
+                        ),
+                    # AccordionGroup("Optional Information",
+                    #     FloatingField("documents"),
+                    #     FloatingField("vat_number"),
+                    #     FloatingField("insurance_number"),
+                    #     ),                                 
                     ),
                     HTML("""
                             <br>
@@ -726,6 +732,9 @@ class FlightPermissionCreateForm(forms.ModelForm):
                 BS5Accordion(
                     AccordionGroup("Mandatory Information",
                         FloatingField("operation"),
+                        FloatingField("status_code"),
+                        FloatingField('token'),
+                        FloatingField('geo_cage')
                         ),
                     ),
                     HTML("""
@@ -739,7 +748,8 @@ class FlightPermissionCreateForm(forms.ModelForm):
         
     class Meta:
         model = FlightPermission
-        fields = ('operation',)
+        fields = '__all__'
+        # fields = ('operation','status_code')
     
 
 class FlightLogCreateForm(forms.ModelForm):
@@ -869,15 +879,20 @@ class PilotCreateForm(forms.ModelForm):
                     AccordionGroup("Mandatory Information",
                         FloatingField("operator"),
                         FloatingField("person"),
+                        # "photo",
                         FloatingField("photo"),
-                        
+                        # FloatingField("identification_photo"),
+                        FloatingField("documents"),
+                        FloatingField("tests"),
+                        FloatingField("address"),
+                        "is_active",
                         ),
                         
-                    AccordionGroup("Optional Information",
-                        FloatingField("photo"),
-                        FloatingField("identification_photo"),
-                        FloatingField("tests"),
-                        ),                                 
+                    # AccordionGroup("Optional Information",
+                    #     FloatingField("photo"),
+                    #     FloatingField("identification_photo"),
+                    #     FloatingField("tests"),
+                    #     ),                                 
                     ),
                     
                     HTML("""

@@ -1,7 +1,7 @@
 from django.contrib import admin
 from simple_history.admin import SimpleHistoryAdmin
 from .forms import AircraftModelForm
-from .models import AircraftMasterComponent, AircraftModel, Authorization, Activity, Company, ManufacturerPart, Operator, Contact, Aircraft, Pilot, AircraftDetail, AircraftComponent, Firmware, AircraftAssembly, SupplierPart, MasterComponentAssembly
+from .models import AircraftMasterComponent, AircraftModel, Authorization, Activity, Company, ManufacturerPart, Operator, Contact, Aircraft, Person, Pilot, AircraftDetail, AircraftComponent, Firmware, AircraftAssembly, SupplierPart, MasterComponentAssembly
 # Register your models here.
 
 
@@ -19,6 +19,7 @@ admin.site.register(Firmware)
 admin.site.register(Operator)
 admin.site.register(Contact)
 admin.site.register(Pilot)
+admin.site.register(Person)
 admin.site.register(Aircraft, SimpleHistoryAdmin)
 admin.site.register(AircraftModel,AircraftModelAdmin)
 admin.site.register(AircraftAssembly,SimpleHistoryAdmin)

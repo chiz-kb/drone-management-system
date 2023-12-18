@@ -21,7 +21,7 @@ from pki_framework.serializers import AerobridgeCredentialSerializer, Aerobridge
 from pki_framework import encrpytion_util
 from jetway.pagination import StandardResultsSetPagination
 from rest_framework.generics import DestroyAPIView
-from .forms import PersonCreateForm, AddressCreateForm, OperatorCreateForm , AircraftCreateForm, CompanyCreateForm, FirmwareCreateForm, FlightLogCreateForm, FlightOperationCreateForm, AircraftDetailCreateForm, FlightPlanCreateForm,  ContactCreateForm, PilotCreateForm, ActivityCreateForm,CustomCloudFileCreateForm, AuthorizationCreateForm, TokenCreateForm, AircraftComponentCreateForm,AircraftModelCreateForm, AircraftMasterComponentCreateForm, AircraftAssemblyCreateForm, IncidentCreateForm, AircraftAssemblyUpdateForm
+from .forms import FlightPermissionCreateForm, PersonCreateForm, AddressCreateForm, OperatorCreateForm , AircraftCreateForm, CompanyCreateForm, FirmwareCreateForm, FlightLogCreateForm, FlightOperationCreateForm, AircraftDetailCreateForm, FlightPlanCreateForm,  ContactCreateForm, PilotCreateForm, ActivityCreateForm,CustomCloudFileCreateForm, AuthorizationCreateForm, TokenCreateForm, AircraftComponentCreateForm,AircraftModelCreateForm, AircraftMasterComponentCreateForm, AircraftAssemblyCreateForm, IncidentCreateForm, AircraftAssemblyUpdateForm
 from django.shortcuts import redirect
 from django.http import Http404
 from django.conf import settings
@@ -48,7 +48,7 @@ from django.utils.safestring import mark_safe
 import calendar
 
 import os
-
+from django.contrib.auth.decorators import login_required
 
 load_dotenv(find_dotenv())
 
@@ -65,6 +65,7 @@ class ManufacturingReadFirst(TemplateView):
     template_name = 'launchpad/company/manufacturing_read_first.html'
 
 ### Person Views 
+# @login_required
 class PeopleList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
     template_name = 'launchpad/person/person_list.html'
@@ -1692,21 +1693,21 @@ class FlightPermissionsDetail(APIView):
         serializer = FlightPermissionSerializer(flightpermission)
         return Response({'serializer': serializer, 'flightpermission': flightpermission})
 
-# class FlightPermissionCreateView(CreateView):
-#     def get(self, request, *args, **kwargs):
-#         context = {'form': FlightPermissionCreateForm()}
-#         return render(request, 'launchpad/flightpermission_create.html', context)
+class FlightPermissionCreateView(CreateView):
+    def get(self, request, *args, **kwargs):
+        context = {'form': FlightPermissionCreateForm()}
+        return render(request, 'launchpad/flight_permission/flightpermission_create.html', context)
 
-#     def post(self, request, *args, **kwargs):
-#         form = FlightPermissionCreateForm(request.POST)
-#         context = {'form': form}
-#         if form.is_valid():
-#             flight_permission = form.save()
-#             ## Issue a permission artefact
-#             print(flight_permission.operation.flight_plan.id) 
-#             return redirect('flightpermissions-list')
+    def post(self, request, *args, **kwargs):
+        form = FlightPermissionCreateForm(request.POST)
+        context = {'form': form}
+        if form.is_valid():
+            flight_permission = form.save()
+            ## Issue a permission artefact
+            print(flight_permission.operation.flight_plan.id) 
+            return redirect('flightpermissions-list')
 
-#         return render(request, 'launchpad/flightpermission_create.html', context)
+        return render(request, 'launchpad/flight_permission/flightpermission_create.html', context)
   
     
 ### Flight Permission Artefact Details Views
@@ -1714,14 +1715,15 @@ class FlightPermissionsDetail(APIView):
     
 class FlightPermissionDigitalSkyList(APIView):
     renderer_classes = [TemplateHTMLRenderer]
-    template_name = 'launchpad/flightpermission_digitalsky_list.html'
+    template_name = 'launchpad/flight_permission_digital_sky/flightpermission_digitalsky_list.html'
     
     def get(self, request):
         """
         This view should return a list of all the purchases
         for the currently authenticated user.
         """
-        queryset = FlightPermission.objects.filter(is_successful=False)
+        
+        queryset = FlightPermission.objects.all()
         return Response({'flightpermissions': queryset})
 
 

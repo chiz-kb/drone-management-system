@@ -105,6 +105,11 @@
         var fg = L.featureGroup().addTo(map);
         let geo_json = {{flightoperation.flight_plan.geo_json|safe}};
         
+    // Replace StamenTileLayer with OpenStreetMap layer
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+        
         map.addLayer(new L.StamenTileLayer("toner-lite", {
                         detectRetina: true
                     }));

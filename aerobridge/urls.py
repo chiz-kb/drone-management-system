@@ -21,10 +21,10 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 import jetway.views as jetwayviews
-
+from launchpad import views as  launchpad_views
 urlpatterns = [
-    
     path('ping/', jetwayviews.PingView.as_view(), name="ping"),
+    # path('', launchpad_views.HomeView.as_view()),
     path('', jetwayviews.HomeView.as_view()),
     path('admin/', admin.site.urls),
 

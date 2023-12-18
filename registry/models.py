@@ -91,8 +91,8 @@ class Address(models.Model):
     postcode = models.CharField(_("post code"), max_length=10)
     city = models.CharField(max_length=140, help_text="Set a city for this address")
     state = models.CharField(max_length=2, blank=True, null=True, choices=STATE_CHOICES,
-                             help_text="Pick a state, at the moment only Indian States are configured.")
-    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='IN')
+                             help_text="Pick a state")
+    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='ET')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -367,10 +367,10 @@ class Contact(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return  self.operator.company_name +  ' : '+ self.person.first_name + ' ' + self.person.last_name + ' : '
+        return  self.operator.company.full_name +  ' : '+ self.person.first_name + ' ' + self.person.last_name + ' : '
 
     def __str__(self):
-        return self.operator.company_name + ' : ' +self.person.first_name + ' ' + self.person.last_name 
+        return self.operator.company.full_name + ' : ' +self.person.first_name + ' ' + self.person.last_name 
 
 
 class Pilot(models.Model):

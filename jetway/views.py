@@ -7,6 +7,8 @@ from django.views import View
 from django.http import HttpResponse
 import json
 
+
+
 @method_decorator(requires_scopes(['aerobridge.read']), name='dispatch')
 class PingView(View):        
     def get(self, request):
