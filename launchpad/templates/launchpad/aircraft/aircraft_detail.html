@@ -1,13 +1,14 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Trusted Flights
+        {% trans "Trusted Flights" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Aircrafts
+        {% trans "Aircrafts" %}
       </li>
     </ol>
   </nav>
@@ -24,37 +25,37 @@
         </tr>
     </thead>
     <tr>
-        <td>Drone Status</td>
+        <td> {% trans "Drone Status" %}</td>
         <td>
             <button type="button" class="btn {% if aircraft.status == 1 %}btn-outline-success{% elif aircraft.status  == 0 %}btn-outline-warning{% endif %}" disabled>{{ aircraft.get_status_display }}</button>            
         </td>    
     </tr>
     <tr>
-        <td>Operator</td>
+        <td> {% trans "Operator" %}</td>
         <td>{{ aircraft.operator.company.full_name }}</td>
     </tr>
     <tr>
-        <td>Friendly Name</td>
+        <td> {% trans "Friendly Name" %}</td>
         <td>{{ aircraft.name}}</td>    
     </tr>
     <tr>
-        <td>Flight Controller Number (Drone ID)</td>
+        <td> {% trans "Flight Controller Number (Drone ID)" %}</td>
         <td><div class="alert alert-info" role="alert"><b>{{aircraft.flight_controller_id}}</b></div></td>
     </tr>
     <tr>
-        <td>Manufacturer</td>
+        <td> {% trans "Manufacturer" %}</td>
         <td><a href="/launchpad/manufacturers/{{aircraft.manufacturer.id}}/detail">{{aircraft.manufacturer.full_name}}</a></td>
     </tr>
     <tr>
-        <td>Assembly</td>
+        <td> {% trans "Assembly" %}</td>
         <td><a href="/launchpad/aircraft-assemblies/{{ aircraft_assembly.id }}/detail">{{ aircraft_assembly }}</a> </td>
     </tr>
 </table>
 
 </div>
-<p class="text-muted">Last Updated at {{aircraft.updated_at|date:'Y-m-d H:i' }} </p>
+<p class="text-muted"> {% trans "Last Updated at" %} {{aircraft.updated_at|date:'Y-m-d H:i' }} </p>
 <br>
-<p><a class="btn btn-primary" href="/launchpad/aircrafts/{{aircraft.id}}"><b>Update Details</b></a>&nbsp;&nbsp;{% if aircraft_extended %}<a class="btn btn-secondary" href="/launchpad/aircraft-extended/{{aircraft_extended.id}}/detail"><b>See extended details</b></a>{% endif %}&nbsp;&nbsp;{% if aircraft.components.all %}<a class="btn btn-secondary" href="/launchpad/aircrafts/{{aircraft.id}}/components"><b>See aircraft assembly</b></a>{% endif %}</p>
+<p><a class="btn btn-primary" href="/launchpad/aircrafts/{{aircraft.id}}"><b> {% trans "Update Details" %}</b></a>&nbsp;&nbsp;{% if aircraft_extended %}<a class="btn btn-secondary" href="/launchpad/aircraft-extended/{{aircraft_extended.id}}/detail"><b>See extended details</b></a>{% endif %}&nbsp;&nbsp;{% if aircraft.components.all %}<a class="btn btn-secondary" href="/launchpad/aircrafts/{{aircraft.id}}/components"><b>See aircraft assembly</b></a>{% endif %}</p>
 
 </div>
 {% endblock %}

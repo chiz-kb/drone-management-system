@@ -1,18 +1,19 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-       Addresses
+        {% trans "Addresses" %}
       </li>
     </ol>
   </nav>
 <div class="row mb-3">
-<h2> Update Address </h2>
+<h2> {% trans "Update Address" %} </h2>
 </div>
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
@@ -20,7 +21,7 @@
             {% csrf_token %}
             {% render_form serializer %}
             <br>
-            <button class="btn btn-primary" type="submit" value="Update">Update</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'addresses-list' %}" role="button">Cancel</a>
+            <button class="btn btn-primary" type="submit" value="Update">{% trans "Update" %}</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'addresses-list' %}" role="button">Cancel</a>
         </form>
     </div>
 </div>

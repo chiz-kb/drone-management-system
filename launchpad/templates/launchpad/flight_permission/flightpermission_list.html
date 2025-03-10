@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Trusted Flights
+        {% trans "Trusted Flights" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Permissions
+        {% trans "Permissions" %}
       </li>
     </ol>
   </nav>
@@ -15,8 +16,8 @@
 
 <div class="row mb-3">
   <div class="col-md-8 themed-grid-col">
-    <h2>Flight Permissions</h2>
-    <p>See all the flight permission objects, if you do not see a permission for your operation, go to the operation detail and generate a permission.</p>
+    <h2> {% trans "Flight Permissions" %}</h2>
+    <p>{% trans "See all the flight permission objects, if you do not see a permission for your operation, go to the operation detail and generate a permission." %}</p>
   </div>
   <div class="col-md-4 themed-grid-col"></div>
 </div>
@@ -31,7 +32,7 @@
               for <a href="/launchpad/flightpermissions/{{flightpermission.id}}/detail">{{ flightpermission.operation.name }}</a></li>
             {% endfor %}
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no flight permissions added in Aerobridge, once added the list of flight permissions will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i> {% trans "There are no flight permissions added in Aerobridge, once added the list of flight permissions will be displayed here." %}</i></p></li>
         {% endif %}
 
 

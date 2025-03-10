@@ -1,11 +1,12 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% load static %}
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
-        <h2>Upload Errors</h2>
+        <h2>{% trans "Upload Errors" %}</h2>
         <p>{{errors}}</p>
     </div>
     <div class="col-md-6 themed-grid-col"></div>

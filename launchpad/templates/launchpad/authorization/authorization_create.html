@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
 
-    <h2>Create a new authorization</h2>
-    <p>Create a new authorization in the database, you can then assign to the operator and flight plan</p>
+    <h2>  {% trans "Create a new authorization" %}</h2>
+    <p>  {% trans "Create a new authorization in the database, you can then assign to the operator and flight plan" %}</p>
     <form action="" method="post">
         {% csrf_token %}
         {% if form.errors %}

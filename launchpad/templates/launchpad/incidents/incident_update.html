@@ -1,10 +1,11 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
-<h2>Update Incident Report</h2>
+<h2> {% trans "Update Incident Report" %}</h2>
 <br>
 
 <form action="{% url 'incidents-update' incident_id=incident.pk %}" method="POST">
@@ -19,7 +20,7 @@
     {% endif %}
     {% render_form serializer %}
     <br>
-    <button class="btn btn-primary" type="submit" value="Update">Update</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'incidents-list' %}" role="button">Cancel</a>
+    <button class="btn btn-primary" type="submit" value="Update"> {% trans "Update" %}</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'incidents-list' %}" role="button"> {% trans "Cancel" %}</a>
         </form>
     </div>
     </div>

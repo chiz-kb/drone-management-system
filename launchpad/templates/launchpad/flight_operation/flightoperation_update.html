@@ -1,8 +1,9 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 <div class="row mb-3">
-<h2>Flightoperation Details</h2>
+<h2>   {% trans "Flightoperation Details" %}</h2>
 </div>
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
@@ -22,7 +23,7 @@
     <button class="btn btn-primary" type="submit" value="Update">Update</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'flightoperations-list' %}" role="button">Cancel</a>
 </form>
 {% else %}
-<p>The flight operation is not editable becuase the log has been signed.</p>
+<p> {% trans "The flight operation is not editable becuase the log has been signed." %}</p>
 {% endif %}
 </div>
 </div>

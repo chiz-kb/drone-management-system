@@ -1,4 +1,5 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 <div>
@@ -13,11 +14,11 @@
         </tr>
     </thead>
     <tr>
-        <td>Name</td>
+        <td>{% trans "Name" %}</td>
         <td>{{ activity.name }}</td>
     </tr>
     <tr>
-        <td>Type</td>
+        <td>{% trans "Type" %}</td>
         <td>{{ activity.get_activity_type_display }}</td>    
     </tr>
    

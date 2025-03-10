@@ -1,14 +1,15 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block navbreadcrumb %}
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item">
-      Manufacturing
+      {% trans "Manufacturing" %}
     </li>
     <li class="breadcrumb-item active" aria-current="page">
-      Aircraft Assembly Details 
+      {% trans "Aircraft Assembly Details" %} 
     </li>
   </ol>
 </nav>
@@ -16,10 +17,10 @@
 {% endblock %}
 {% block content %}    
   <div class="alert alert-primary" role="alert">
-    <span class="bi bi-bell-fill"></span> You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations. 
+    <span class="bi bi-bell-fill"></span>  {% trans "You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations." %}
   </div>
   <div>
-  <h2>Assembly Detail&nbsp;&nbsp;<button type="button" class="btn {% if aircraft_assembly.status == 2 %}btn-outline-dark{% elif aircraft_assembly.status_code  == 0 %}btn-outline-warning{% else %}btn-outline-danger{% endif %}" disabled>{{ aircraft_assembly.get_status_display|upper }}</button></h2>
+  <h2> {% trans "Assembly Detail" %}&nbsp;&nbsp;<button type="button" class="btn {% if aircraft_assembly.status == 2 %}btn-outline-dark{% elif aircraft_assembly.status_code  == 0 %}btn-outline-warning{% else %}btn-outline-danger{% endif %}" disabled>{{ aircraft_assembly.get_status_display|upper }}</button></h2>
   <div class="row">
     <div class="col-8">
         <table  class="table">
@@ -52,15 +53,15 @@
     
   {% endif %}
   <br>
-    <h3>Assembled Components</h3>
-    <p>Following are the components installed in this assembly, click on the components to update them. </p>
+    <h3> {% trans "Assembled Components" %}</h3>
+    <p> {% trans "Following are the components installed in this assembly, click on the components to update them." %} </p>
     <ul class="list-group list-group-flush">
       {% if assembly_components %}
         {% for aircraft_component in assembly_components %}            
           <li class="list-group-item"><mark>{{ aircraft_component.component_category }}</mark>&nbsp;&nbsp;<a href="/launchpad/aircraft-components/{{aircraft_component.id}}/detail">{{ aircraft_component.component_common_name }}</a>&nbsp;&nbsp;<button type="button" class="btn {% if aircraft_component.status == 10 %}btn-outline-success{% else %}btn-outline-warning{% endif %}" disabled>{{aircraft_component.get_status_display}}</button>&nbsp;&nbsp;<small>{{aircraft_component.procurement_origin}}</small></li>
         {% endfor %}
     {% else %}
-          <li class="list-group-item"><p class="text-muted"><i>You have not added any aircraft assembly details in Aerobridge, once added the list of the assembly will be displayed here.</i></p></li>
+          <li class="list-group-item"><p class="text-muted"><i> {% trans "You have not added any aircraft assembly details in Aerobridge, once added the list of the assembly will be displayed here." %}</i></p></li>
     {% endif %}
       </ul>
   <br>

@@ -1,19 +1,20 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Pilots
+        {% trans "Pilots" %}
       </li>
     </ol>
   </nav>
 
-<h2>Pilot Details</h2>
+<h2>{% trans "Pilot Details" %}</h2>
 <br>
 <p><img src="{{pilot.photo}}" class="thumbnail"></p>
 <br>
@@ -26,25 +27,25 @@
     </thead>
 
     <tr>
-        <td>Company</td>
+        <td>{% trans "Company" %}</td>
         <td>{{ pilot.operator.company_name }}</td>    
     </tr>
     <tr>
-        <td>Photo URL</td>
+        <td>{% trans "Photo URL" %}</td>
         <td>{{ pilot.identification_photo }}</td>
     </tr>
     <tr>
-        <td>Full Name</td>
+        <td>{% trans "Full Name" %}</td>
         <td><b>{{pilot.person.first_name}} {{pilot.person.last_name}}</b></td>
     </tr>
     <tr>
-        <td>Address</td>
+        <td>{% trans "Address" %}</td>
         <td>{{pilot.address.address_line_1}}, {{pilot.address.city}}</td>
     </tr>
     
 </table>
 <br>
-<p><a class="btn btn-primary" href="/launchpad/pilots/{{pilot.id}}"><b>Update Details</b></a></p>
+<p><a class="btn btn-primary" href="/launchpad/pilots/{{pilot.id}}"><b>{% trans "Update Details" %}</b></a></p>
 
 
 {% endblock %}

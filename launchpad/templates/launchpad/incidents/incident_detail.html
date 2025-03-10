@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Incidents
+        {% trans "Incidents" %}
       </li>
     </ol>
   </nav>
@@ -16,7 +17,7 @@
 
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
-<h1>Incident Detail</h1>
+<h1> {% trans "Incident Detail" %}</h1>
 <br>
 
 <table  class="table">
@@ -28,22 +29,22 @@
     </thead>
     
     <tr>
-        <td>Impacted Aircraft</td>
+        <td> {% trans "Impacted Aircraft" %}</td>
         <td><a href="/launchpad/aircrafts/{{ incident.aircraft.id}}/detail">{{ incident.aircraft}}</a</td>    
     </tr>
     <tr>
-        <td>Component Status </td>
+        <td> {% trans "Component Status" %} </td>
         <td>
             <button type="button" class="btn {% if incident.new_status == 10 %}btn-outline-success{% else %}btn-outline-warning{% endif %}" disabled>{{ incident.get_new_status_display}}</button>
             
             </td>
     </tr>
     <tr>
-        <td>Notes </td>
+        <td> {% trans "Notes" %} </td>
         <td>{{ incident.notes}}</a></td>
     </tr>
     <tr>
-        <td>Impacted Components</td>
+        <td> {% trans "Impacted Components" %}</td>
        
         <td>
             <ul class="list-group list-group-flush">

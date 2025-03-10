@@ -1,13 +1,13 @@
 {% extends "launchpad/layout.html" %} 
-
+{% load i18n %} 
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Files
+        {% trans "Files" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        All
+        {% trans "All" %}
       </li>
     </ol>
   </nav>
@@ -18,8 +18,8 @@
 
 <div class="row mb-3">
     
-    <h2>Cloud Files</h2>
-    <p>Using Aerobridge, you can store / upload files to a Cloud provider of your choice. It is crucial to store files and logs appropriately to ensure smooth operations, generally signed logs are submitted to Digital Sky, kept for your records etc. </p>
+    <h2>{% trans "Cloud Files" %}</h2>
+    <p>{% trans "Using Aerobridge, you can store / upload files to a Cloud provider of your choice. It is crucial to store files and logs appropriately to ensure smooth operations, generally signed logs are submitted to Digital Sky, kept for your records etc. " %}</p>
 </div>
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
@@ -30,18 +30,17 @@
         <ul class="list-group list-group-flush">
         {% if cloudfiles %}
             {% for cloudfile in cloudfiles %}
-                <li class="list-group-item"><a href="/launchpad/cloud-files/{{cloudfile.id}}/detail">{{ cloudfile.name }}</a>&nbsp;&nbsp;<small class="text-muted">&mdash; Last created at {{ cloudfile.created_at|date:'Y-m-d H:i' }} </small></li>
+                <li class="list-group-item"><a href="/launchpad/cloud-files/{{cloudfile.id}}/detail">{{ cloudfile.name }}</a>&nbsp;&nbsp;<small class="text-muted">&mdash; {% trans "Last created at" %} {{ cloudfile.created_at|date:'Y-m-d H:i' }} </small></li>
             {% endfor %}
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no cloud files added in Aerobridge, once added the list of files will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i>{% trans "There are no cloud files added in Aerobridge, once added the list of files will be displayed here." %}</i></p></li>
         {% endif %}
 
     
-        
     </ul>
     
     <p>&nbsp;</p>
-    <p><a class="btn btn-primary" href="/launchpad/cloud-files/upload"><b>&#43; Add a File</b></a></p>
+    <p><a class="btn btn-primary" href="/launchpad/cloud-files/upload"><b> &#43;  {% trans "Add a File" %}</b></a></p>
 
 </div>
 <div class="col-md-4 themed-grid-col"></div>

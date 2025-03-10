@@ -1,4 +1,5 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load static %}
 
     
@@ -9,24 +10,24 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Opeations
+        {% trans "Opeations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Incidents
+        {% trans "Incidents" %}
       </li>
     </ol>
   </nav>
 {% endblock %}
 {% block content %}
 
-    <h2>Incidents Calendar</h2>
-    <p>See all the flight incidents in a calendar view, use the month controls to navigate and see past and future operations</p>
+    <h2>{% trans "Incidents Calendar" %}</h2>
+    <p>{% trans "See all the flight incidents in a calendar view, use the month controls to navigate and see past and future operations" %}</p>
 
   {{ calendar }}
 
   <div class="btn-group" role="group" aria-label="Calender buttons">
-    <a class="btn btn-primary" href="{% url 'incidents-calendar' %}?{{ prev_month }}"> Previous Month </a>
-    <a class="btn btn-primary" href="{% url 'incidents-calendar' %}?{{ next_month }}"> Next Month </a>
+    <a class="btn btn-primary" href="{% url 'incidents-calendar' %}?{{ prev_month }}"> {% trans "Previous Month" %} </a>
+    <a class="btn btn-primary" href="{% url 'incidents-calendar' %}?{{ next_month }}"> {% trans "Next Month" %} </a>
   </div>
 
 {% endblock %}

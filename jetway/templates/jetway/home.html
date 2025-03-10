@@ -1,6 +1,6 @@
-
+{% load i18n %}
 <!DOCTYPE html>
-{% load static %}{% load i18n %}
+{% load static %}
 
 <html lang="en">
 
@@ -41,7 +41,7 @@
     <meta name="description" content="Aerobridge Management Server">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aerobridge.io</title>
+    <title>Ethiopian Civil Aviation</title>
 </head>
 
 <body>
@@ -58,34 +58,37 @@
     <div class="container py-4">
       <header class="pb-3 mb-4 border-bottom">
         <a href="/" class="d-flex align-items-center text-dark text-decoration-none">
-            <img alt="Logo" src="{% static "jetway/images/logo_header_photo_1.png" %}" width="400px">
+            {% comment %} <img alt="Logo" src="{% static "jetway/images/logo_header_photo_1.png" %}" width="400px"> {% endcomment %}
+            <h1 style="color:blue;">Ethiopian Civil Aviation</h1>
           <span class="fs-4">&nbsp;</span>
         </a>
       </header>
   
-      <div class="p-5 mb-4 bg-light rounded-3">
+      {% comment %} <div class="p-5 mb-4 bg-light rounded-3">
         <div class="container-fluid py-5">
           <h1 class="display-5 fw-bold">Secure Drone Operations and Trusted flights</h1>
           <p class="col-md-8 fs-4">An advanced management server for secure drone operations: trusted flights, want to know more or deploy your own? </p>
           <a class="btn btn-primary btn-lg" href="https://webinar.aerobridge.io">Signup for our webinar &rarr;</a>
         </div>
-      </div>
+      </div> {% endcomment %}
   
       <div class="row align-items-md-stretch">
-        <div class="col-md-6">
+        <div class="col-md-12">
           <div class="h-100 p-5 bg-light rounded-3">
             <h2>Take it for a testdrive</h2>
-            <p>Explore the Aerobridge API endpoints across all aspects of the management server. You can use the server as way to secure, manage and store your operations. See the <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/openskies-sh/aerobridge/master/api/aerobridge-1.0.0.resolved.yaml">API Specification</a> or take it for a test drive.</p>
-            <a class="btn btn-secondary btn-lg" href="/launchpad" >Testflight &rarr;</a>
+            <p>Explore the Aerobridge API endpoints across all aspects of the management server. You can use the server as way to secure, manage and store your operations. See the 
+              {% comment %} <a href="https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/openskies-sh/aerobridge/master/api/aerobridge-1.0.0.resolved.yaml">API Specification</a>  {% endcomment %}
+              or take it for a test drive.</p>
+              <a class="btn btn-secondary btn-lg" href="{% url 'login' %}" >Testflight &rarr;</a>
           </div>
         </div>
-        <div class="col-md-6">
+        {% comment %} <div class="col-md-6">
           <div class="h-100 p-5 bg-light border rounded-3">
             <h2>Aerobridge Community</h2>
             <p>If you are technically oriented, and can code, <a href="https://discord.gg/dnRxpZdd9a">join our world-class open source community</a> building foundational technologies for trusted UAS flights.</p>           
             
           </div>
-        </div>
+        </div> {% endcomment %}
       </div>
       <br><br>
      
@@ -93,7 +96,7 @@
   </main>  
 
   <footer class="my-5 pt-5 text-muted text-center text-small">
-    <p class="mb-1">&copy; Openskies Aerial Technology Ltd. Get Aerobridge for your company! Contact us via <a href="https://about.openskies.sh/#contact">our homepage</a></p>
+    {% comment %} <p class="mb-1">&copy; Openskies Aerial Technology Ltd. Get Aerobridge for your company! Contact us via <a href="https://about.openskies.sh/#contact">our homepage</a></p> {% endcomment %}
   </footer>
 
   </footer>

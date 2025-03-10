@@ -1,8 +1,9 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 <div>
-<h1>Authorization Details</h1>
+<h1>  {% trans "Authorization Details" %}</h1>
 <br>
 
 <table  class="table">
@@ -13,30 +14,30 @@
         </tr>
     </thead>
     <tr>
-        <td>Name</td>
+        <td>  {% trans "Name" %}</td>
         <td>{{ authorization.title }}</td>
     </tr>
     <tr>
-        <td>Operation Max Height</td>
+        <td>  {% trans "Operation Max Height" %}</td>
         <td>{{ authorization.operation_max_height }}</td>    
     </tr>
     <tr>
-        <td>Operation Altitude system</td>
+        <td>  {% trans "Operation Altitude system" %}</td>
         <td>{{ authorization.get_operation_altitude_system_display }}</td>    
     </tr>
     <tr>
-        <td>Airspace Type</td>
+        <td>  {% trans "Airspace Type" %}</td>
         <td>{{ authorization.get_airspace_type_display }}</td>    
     </tr>
    
     <tr>
-        <td>Risk Type</td>
+        <td>  {% trans "Risk Type" %}</td>
         <td>{{ authorization.get_risk_type_display }}</td>    
     </tr>
    
    
     <tr>
-        <td>Authorization Type</td>
+        <td>  {% trans "Authorization Type" %}</td>
         <td>{{ authorization.get_authorization_type_display }}</td>    
     </tr>
    

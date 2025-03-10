@@ -1,11 +1,13 @@
-{% extends "launchpad/layout.html" %} {% block navbreadcrumb %}
+{% extends "launchpad/layout.html" %} 
+{% load i18n %}
+{% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Pilots
+        {% trans "Pilots" %}
       </li>
     </ol>
   </nav>
@@ -15,8 +17,8 @@
 
 <div class="row mb-3">
 
-    <h2>Pilots list</h2>
-    <p>See all the pilots for your operators as a list below, click to show details or add a new pilot</p>
+    <h2>{% trans "Pilots list" %}</h2>
+    <p>{% trans "See all the pilots for your operators as a list below, click to show details or add a new pilot" %}</p>
 
 </div>
 <div class="row mb-3">
@@ -28,11 +30,11 @@
             {% endfor %}
 
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no pilots added in Aerobridge, once added the list of pilots will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i>{% trans "There are no pilots added in Aerobridge, once added the list of pilots will be displayed here." %}</i></p></li>
         {% endif %}        
     </ul>
     <br>
-    <p><a class="btn btn-primary" href="/launchpad/pilots/new"><b>&#43; Add a new pilot</b></a></p>
+    <p><a class="btn btn-primary" href="/launchpad/pilots/new"><b>&#43; {% trans "Add a new pilot" %}</b></a></p>
 </div>
 <div class="col-md-6 themed-grid-col"></div>
 </div>

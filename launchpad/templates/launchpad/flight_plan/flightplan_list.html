@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Trusted Flights
+        {% trans "Trusted Flights" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Plans
+        {% trans "Plans" %}
       </li>
     </ol>
   </nav>
@@ -16,8 +17,8 @@
 
 <div class="row mb-3">
   <div class="col-md-6 themed-grid-col">
-    <h2>Flight Plan</h2>
-    <p>See all the flight plans in the system, click on any one to show details</p>
+    <h2>{% trans "Flight Plan" %}</h2>
+    <p>{% trans "See all the flight plans in the system, click on any one to show details" %}</p>
   </div>
   <div class="col-md-6 themed-grid-col"></div>
 </div>
@@ -30,7 +31,7 @@
             <li class="list-group-item"><a href="/launchpad/flightplans/{{flightplan.id}}/detail">{{ flightplan.name }}</a></li>
             {% endfor %}
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no flight plans added in Aerobridge, once added the list of flight plans will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i>{% trans "There are no flight plans added in Aerobridge, once added the list of flight plans will be displayed here." %}</i></p></li>
         {% endif %}
 
     </ul>
@@ -41,12 +42,12 @@
           {% if flightplans.links.previous %}
           
           <li class="page-item">
-            <a class="page-link" href="{{ flightplans.links.previous }}">Previous</a>
+            <a class="page-link" href="{{ flightplans.links.previous }}">{% trans "Previous" %}</a>
           </li>  
             
           {% else %}
             <li class="page-item disabled">
-              <a class="page-link">Previous</a>
+              <a class="page-link">{% trans "Previous" %}</a>
             </li>
           {% endif %}
           &nbsp;&nbsp;
@@ -60,12 +61,12 @@
           &nbsp;&nbsp;
           {% if flightplans.links.next %}   
           <li class="page-item">
-            <a class="page-link" href="{{ flightplans.links.next }}">Next</a>
+            <a class="page-link" href="{{ flightplans.links.next }}">{% trans "Next" %}</a>
           </li>         
           
           {% else %}
           <li class="page-item disabled">
-            <a class="page-link">Next</a>
+            <a class="page-link">{% trans "Next" %}</a>
           </li>
           {% endif %}
       </ul>

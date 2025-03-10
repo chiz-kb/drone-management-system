@@ -1,4 +1,7 @@
 
+import json
+
+import geojson
 from registry.models import AircraftMasterComponent, ManufacturerPart, Person, Address, Operator, Aircraft, Company, Firmware, Contact, Pilot, Activity, Authorization, AircraftDetail, AircraftComponent,AircraftModel,AircraftAssembly,SupplierPart, MasterComponentAssembly
 from gcs_operations.models import FlightOperation, FlightLog, FlightPlan, FlightPermission
 from supply_chain_operations.models import Incident
@@ -14,6 +17,7 @@ from crispy_forms.bootstrap import AccordionGroup
 from crispy_bootstrap5.bootstrap5 import Field, FloatingField, BS5Accordion
 from django.db.models import OuterRef, Exists
 from django.db.models import Q
+# from .models import Person
 
 KEY_ENVIRONMENT = ((0, _('DIGITAL SKY OPERATOR')),(1, _('DIGITAL SKY MANUFACTURER')),(2, _('DIGITAL SKY PILOT')),(3, _('RFM')),(4, _('OTHER')),)
 TOKEN_TYPE= ((0, _('PUBLIC_KEY')),(1, _('PRIVATE_KEY')),(2, _('AUTHENTICATION TOKEN')),(3, _('RFM KEY')),(4, _('OTHER')),)
@@ -21,6 +25,78 @@ TOKEN_TYPE= ((0, _('PUBLIC_KEY')),(1, _('PRIVATE_KEY')),(2, _('AUTHENTICATION TO
 # books/forms.py
 
 
+# class PersonCreateForm(forms.ModelForm):
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper(self)
+#         self.helper.help_text_inline = True   
+        
+#         self.helper.layout = Layout(
+#                 BS5Accordion(
+#                     AccordionGroup("Mandatory Information",
+#                         FloatingField("first_name"),
+#                         FloatingField("middle_name"),
+#                         FloatingField("last_name"),
+#                         FloatingField("email"),
+#                         FloatingField("phone_number"),
+#                         FloatingField("country"),
+#                         ),
+#                     AccordionGroup("Optional Information",
+#                         FloatingField("documents"),                        
+#                         FloatingField("date_of_birth")
+#                         ),                                 
+#                     ),
+#                     HTML("""
+#                             <br>
+#                         """),
+#                     ButtonHolder(
+#                                 Submit('submit', '+ Add Person'),
+#                                 HTML("""<a class="btn btn-secondary" href="{% url 'people-list' %}" role="button">Cancel</a>""")
+#                     )
+#                 )     
+
+#     class Meta:
+#         model = Person
+#         fields = '__all__'
+
+
+#################################################################################################
+# class PersonCreateForm(forms.ModelForm):
+#     def __init__(self, *args, **kwargs):
+#         super().__init__(*args, **kwargs)
+#         self.helper = FormHelper(self)
+#         self.helper.help_text_inline = True   
+        
+#         self.helper.layout = Layout(
+#                 BS5Accordion(
+#                     AccordionGroup("Mandatory Information",
+#                         FloatingField("first_name"),
+#                         FloatingField("middle_name"),
+#                         FloatingField("last_name"),
+#                         FloatingField("email"),
+#                         FloatingField("phone_number"),
+#                         FloatingField("country"),
+#                         ),
+#                     AccordionGroup("Optional Information",
+#                         FloatingField("documents"),                        
+#                         FloatingField("date_of_birth")
+#                         ),                                 
+#                     ),
+#                     HTML("""
+#                             <br>
+#                         """),
+#                     ButtonHolder(
+#                                 Submit('submit', '+ Add Person'),
+#                                 HTML("""<a class="btn btn-secondary" href="{% url 'people-list' %}" role="button">Cancel</a>""")
+#                     )
+#                 )     
+
+#     class Meta:
+#         model = Person
+#         fields = '__all__'
+###########################################
+# Define your custom FloatingField
+# Define your custom FloatingField2
 class PersonCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -28,33 +104,50 @@ class PersonCreateForm(forms.ModelForm):
         self.helper.help_text_inline = True   
         
         self.helper.layout = Layout(
-                BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("first_name"),
-                        FloatingField("middle_name"),
-                        FloatingField("last_name"),
-                        FloatingField("email"),
-                        FloatingField("phone_number"),
-                        FloatingField("country"),
-                        ),
-                    AccordionGroup("Optional Information",
-                        FloatingField("documents"),                        
-                        FloatingField("date_of_birth")
-                        ),                                 
-                    ),
-                    HTML("""
-                            <br>
-                        """),
-                    ButtonHolder(
-                                Submit('submit', '+ Add Person'),
-                                HTML("""<a class="btn btn-secondary" href="{% url 'people-list' %}" role="button">Cancel</a>""")
-                    )
-                )     
+            BS5Accordion(
+                AccordionGroup(_("Mandatory Information"),  # Translate the accordion group title
+                    Field("first_name"),
+                    Field("middle_name"),
+                    Field("last_name"),
+                    Field("email"),
+                    Field("phone_number"),
+                    Field("country"),
+                ),
+                
+                AccordionGroup(_("Optional Information"),  # Translate the accordion group title
+                    Field("documents"),                        
+                    Field("date_of_birth")
+                ),                                 
+            ),
+            HTML("""
+                <br>
+            """),
+            ButtonHolder(
+                Submit('submit', _('+ Add Person')),  # Translate the submit button text
+                HTML("""<a class="btn btn-secondary" href="{% url 'people-list' %}" role="button">Cancel</a>""")  # Translate the cancel button text
+            )
+        )     
 
     class Meta:
         model = Person
         fields = '__all__'
-        
+        labels = {
+            'first_name': _('First Name'),
+            'middle_name': _('Middle Name'),
+            'last_name': _('Last Name'),
+            'email': _('Email'),
+            'phone_number': _('Phone Number'),
+            'country': _('Country'),
+            'documents': _('Documents'),
+            'date_of_birth': _('Date of Birth'),
+        }
+        help_texts = {
+        'first_name': _('The first name of the person added to the database'),
+        'email': _('Associate an email address with the person, this field is required"'),
+        'phone_number': _('Associate a phone number of the person.'),
+        'date_of_birth': _('Assign a date of birth to this person'),
+    }
+              
 class AddressCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -63,21 +156,21 @@ class AddressCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("address_line_1"),
-                        FloatingField("address_line_2"),
-                        FloatingField("address_line_3"),
-                        FloatingField("postcode"),                        
-                        FloatingField("city"),
-                        FloatingField("state"),
-                        FloatingField("country"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("address_line_1"),
+                        Field("address_line_2"),
+                        Field("address_line_3"),
+                        Field("postcode"),                        
+                        Field("city"),
+                        Field("state"),
+                        Field("country"),
                         ),                                
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Address'),
+                                Submit('submit',_('+ Add Address')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'addresses-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -85,7 +178,20 @@ class AddressCreateForm(forms.ModelForm):
     class Meta:
         model = Address
         fields = '__all__'
-
+        labels = {
+            'address_line_1': _('Address Line 1'),
+            'address_line_2': _('Address Line 2'),
+            'address_line_3': _('Address Line 3'),
+            'postcode': _('Post code'),
+            'city': _('City'),
+            'state': _('State'),
+            'country': _('Country'),
+        }
+        help_texts = {
+        'city': _('Set a city of this address'),
+        'state': _('Pick a state'),
+            }
+        
 
 class OperatorCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -96,35 +202,47 @@ class OperatorCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("company"),
-                        FloatingField("website"),
-                        FloatingField("email"),
-                        FloatingField("phone_number"),
-                        FloatingField("operator_type"),
-                        FloatingField("address"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("company"),
+                        Field("website"),
+                        Field("email"),
+                        Field("phone_number"),
+                        Field("operator_type"),
+                        Field("address"),
                         ),
-                    AccordionGroup("Optional Information",
-                        "operational_authorizations",
-                        "authorized_activities",
-                        FloatingField("insurance_number"),
-                        FloatingField("company_number"),
-                        FloatingField("vat_number"),
-                        FloatingField("country"),
+                    AccordionGroup(_("Optional Information"),
+                        Field("operational_authorizations"),
+                        Field("authorized_activities"),
+                        Field("insurance_number"),
+                        Field("company_number"),
+                        Field("vat_number"),
+                        Field("country"),
                         ),                                 
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Operator'),
+                                Submit('submit', _('+ Add Operator')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'operators-list' %}" role="button">Cancel</a>""")
                     )
                 )     
      
     class Meta:
         model = Operator
-        exclude = ('expiration',)
+        fields = '__all__'
+        labels = {
+            'company': _('Company'),
+            'operator_type': _('Operator Type'),
+            'operational_authorizations': _('Operational authorizations'),
+            'authorized_activities': _('Company Number'),
+        }
+        help_texts = {
+        'company': _('Specify the company associated with this operator'),
+        'operator_type': _('Choose what kind of operator this is, classify the operator based on capabilites, use the adminsitration panel to add additional operator categories'),
+        'operational_authorizations': _('Choose what kind of authorization this operator posseses, to add additional authorizations, use the administration panel'),
+        'authorized_activities': _('Related to Authorization, select the kind of activities that this operator is allowed to conduct, you can add additional activities using the administration panel'),
+            }
 
 class AircraftCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -134,20 +252,20 @@ class AircraftCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("operator"),
-                        FloatingField("manufacturer"),
-                        FloatingField("final_assembly"),                        
-                        FloatingField("flight_controller_id"),
-                        FloatingField("status"),
-                        FloatingField("photo"),
-                        FloatingField("name")
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("operator"),
+                        Field("manufacturer"),
+                        Field("final_assembly"),                        
+                        Field("flight_controller_id"),
+                        Field("status"),
+                        Field("photo"),
+                        Field("name")
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Aircraft'),
+                                Submit('submit', _('+ Add Aircraft')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'aircrafts-list' %}" role="button">Cancel</a>""")
                     )
                 )
@@ -157,6 +275,25 @@ class AircraftCreateForm(forms.ModelForm):
     class Meta:
         model = Aircraft
         fields = ('operator','manufacturer', 'name','flight_controller_id', 'final_assembly','status','photo',)
+        labels = {
+            'operator': _('Operator'),
+            'manufacturer': _('Manufacturer'),
+            'final_assembly': _('Final assembly'),
+            'flight_controller_id': _('Flight controller id'),
+            'status': _('Photo'),
+            'photo': _('Photo'),
+            'name': _('Name'),
+            
+        }
+        help_texts = {
+        'operator': _('Associate a operator company with this Aircraft'),
+        'manufacturer': _('Associate a manufacturer in the database to this aircraft'),
+        'final_assembly': _('Assign a aircraft assembly to this aircraft, if you do not see a assembly, it means that you will need to create a new assembly first'),
+        'flight_controller_id': _('This is the Drone ID from the RFM, if there are spaces in the ID, remove them '),
+        'status': _('Set the status of this drone, if it is set as inactive, the GCS might fail and flight plans might not be able to load on the drone'),
+        'photo': _('A URL of a photo of the drone'),
+        'name': _('Set the internal name of the aircraft e.g. F1 #2'),
+    }
 
 class AircraftDetailCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -501,17 +638,17 @@ class AircraftMasterComponentCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        FloatingField("family"),
-                        FloatingField("drawing"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field("family"),
+                        Field("drawing"),
                         ),
                   
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Aircraft Master Component'),
+                                Submit('submit', _('+ Add Aircraft Master Component')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'aircraft-master-components-list' %}" role="button">Cancel</a>""")
                     )
                 )
@@ -519,8 +656,16 @@ class AircraftMasterComponentCreateForm(forms.ModelForm):
 
     class Meta:
         model = AircraftMasterComponent
-        fields = '__all__'
-
+        fields = ['name','family','drawing']
+        labels = {
+            'name': _('Name'),
+            'family': _('Family'),
+            'drawing': _('Drawing'),
+        }
+    help_texts = {
+            'family': _('Set the component family'),
+            'drawing': _('A URL to a photo of the component drawing.'),
+        }
 class AircraftModelCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -529,38 +674,38 @@ class AircraftModelCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        FloatingField("popular_name"),
-                        FloatingField("category"),
-                        FloatingField("series"),
-                        FloatingField("sub_category"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field("popular_name"),
+                        Field("category"),
+                        Field("series"),
+                        Field("sub_category"),
                         ),
-                    AccordionGroup("Model Details",
+                    AccordionGroup(_("Model Details"),
                        
-                        FloatingField("max_endurance"),
-                        FloatingField("max_range"),
-                        FloatingField("max_speed"),
-                        FloatingField("dimension_length"),
-                        FloatingField("dimension_breadth"),
-                        FloatingField("dimension_height"),
-                        FloatingField("operating_frequency"),
-                        FloatingField("type_certificate"),
-                        FloatingField("max_certified_takeoff_weight"),
-                        FloatingField("max_height_attainable"),
-                        FloatingField("icao_aircraft_type_designator"),
+                        Field("max_endurance"),
+                        Field("max_range"),
+                        Field("max_speed"),
+                        Field("dimension_length"),
+                        Field("dimension_breadth"),
+                        Field("dimension_height"),
+                        Field("operating_frequency"),
+                        Field("type_certificate"),
+                        Field("max_certified_takeoff_weight"),
+                        Field("max_height_attainable"),
+                        Field("icao_aircraft_type_designator"),
                         ),
-                    AccordionGroup("Master Components",
+                    AccordionGroup(_("Master Components"),
                         Field("master_components"),
                         ),
-                    AccordionGroup("Documents",
+                    AccordionGroup(_("Documents"),
                         Field("documents"),
                         ),
                 HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Aircraft Model'),
+                                Submit('submit', _('+ Add Aircraft Model')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'aircraft-models-list' %}" role="button">Cancel</a>""")
                     )
                 )
@@ -598,6 +743,42 @@ class AircraftModelCreateForm(forms.ModelForm):
     class Meta:
         model = AircraftModel
         fields = '__all__'
+        labels = {
+            'name': _('Name'),
+            'popular_name': _('Popular name'),
+            'category': _('Category'),
+            'series': _('Series'),
+            'sub_category': _('Sub category'),
+            'max_endurance': _('Max endurance'),
+            'max_range': _('Max range'),
+            'max_speed': _('Max speed'),
+            'dimension_length': _('Dimension length'),
+            'dimension_height': _('Dimension height'),
+            'operating_frequency': _('Operating frequency'),
+            'type_certificate': _('Type certificate'),
+            'max_certified_takeoff_weight': _('Max certified takeoff weight'),
+            'max_height_attainable': _('Max height attainable'),
+            'icao_aircraft_type_designator': _('Icao aircraft type designator'),
+            'master_components': _('Master_components'),
+            'documents': _('documents'),    
+        }
+        help_texts = {
+            'name': _('Give this model a full name you can remember e.g. Aerobridge F1'),
+            'popular_name': _('Give this e.g. F1'),
+            'category': _('Set the category for this aircraft, use the closest aircraft type'),
+            'series': _('Define the production series for this Aircraft Model e.g. 2022.1'),
+            'max_endurance': _('Set the flight endurance of this model in minutes'),
+            'max_range': _('Set the flight range of this model in kms.'),
+            'max_speed': _('Set the maximum flight speed in km/hr'),
+            'dimension_length': _('Set the maximum length of the drone in cms'),
+            'dimension_height': _('Set the maximum breadth of the drone in cms'),
+            'operating_frequency': _('Set the maximum height of the drone in cms'),
+            'type_certificate': _('Set the type certificate if available for the drone'),
+            'max_certified_takeoff_weight': _('Set the takeoff weight for the aircraft in gms.'),
+            'max_height_attainable': _('Set the max attainable height in meters'),
+            'icao_aircraft_type_designator': _('If available you can specify the type designator, see https://www.icao.int/publications/doc8643/pages/search.aspx'),
+            'documents': _('Associate any existing documents to this series / model'),
+        }
 
 class CompanyCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -607,29 +788,32 @@ class CompanyCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("full_name"),
-                        FloatingField("common_name"),
-                        FloatingField("email"),
-                        FloatingField("website"),
-                        FloatingField("phone_number"),
-                        FloatingField("company_number"),
-                        FloatingField("address"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("full_name"),
+                        Field("common_name"),
+                        Field("email"),
+                        Field("website"),
+                        Field("phone_number"),
+                        Field("company_number"),
+                        Field("address"),
                         
-                        FloatingField("role"),
-                        FloatingField("country"),
+                        Field("role"),
+                        Field("country"),
+                        Field("documents"),
+                        Field("vat_number"),
+                        Field("insurance_number"),
                         ),
-                    AccordionGroup("Optional Information",
-                        FloatingField("documents"),
-                        FloatingField("vat_number"),
-                        FloatingField("insurance_number"),
+                    AccordionGroup(_("Optional Information"),
+                        Field("documents"),
+                        Field("vat_number"),
+                        Field("insurance_number"),
                         ),                                 
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Company'),
+                                Submit('submit', _('+ Add Company')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'companies-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -637,6 +821,36 @@ class CompanyCreateForm(forms.ModelForm):
     class Meta:
         model = Company
         fields =('full_name','common_name', 'email','website','address','role','country', 'phone_number','documents','vat_number','insurance_number','company_number','role')
+
+        labels = {
+            'full_name': _('Full name'),
+            'common_name': _('Common name'),
+            'email': _('Email'),
+            'website': _('WebSite'),
+            'phone_number': _('Phone number'),       
+            'company_number': _('Company number'),
+            'address': _('Address'),
+            'role': _('Role'),
+            'country': _('Country'),
+            'documents' :_('Documents'),
+            'vat_number': _('Vat number') ,      
+            'insurance_number': _('Insurance number'),
+        }
+
+        help_texts ={
+            'full_name':_('Full legal name of the manufacturing entity'),
+            'common_name': _('Common name for the manufacturer e.g. Skydio'),
+            'email': _('Contact email for support and other queries'),
+            'website': _('Put official URL of the company, if none is available then a manufacturers public facing URL is necessary'),
+            'company_number': _('Company number if available'),
+            'country': _('At the moment only India is configured, you can setup your own country'),
+            'role': _('Set the type of the company'),
+            'address': _('Assign a address to this manufacturers'),
+            'documents': _('You can upload and associate documents to the manufacturer'),
+            'vat_number': _('VAT / Tax number if available'),
+            'insurance_number': _('Insurance number if avaialble'),
+        }
+
 
 class FirmwareCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -646,12 +860,12 @@ class FirmwareCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("binary_file_url"),
-                        FloatingField("binary_file_hash"),
-                        FloatingField("version"),
-                        FloatingField("manufacturer"),
-                        FloatingField("friendly_name"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("binary_file_url"),
+                        Field("binary_file_hash"),
+                        Field("version"),
+                        Field("manufacturer"),
+                        Field("friendly_name"),
                         "is_active",
                         ),
                     
@@ -659,7 +873,7 @@ class FirmwareCreateForm(forms.ModelForm):
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Firmware'),
+                                Submit('submit', _('+ Add Firmware')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'firmwares-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -671,6 +885,28 @@ class FirmwareCreateForm(forms.ModelForm):
         model = Firmware
         fields = '__all__'
 
+        ######
+        labels = {
+             'binary_file_url': _('Binary file url'),
+             'binary_file_hash': _('Binary file hash'),
+             'version': _('Version'),
+             'manufacturer': _('Manufacturer'),
+             'friendly_name': _('Friendly name'),
+             'is_active': _('Is active'),
+
+        }
+
+        help_texts = {
+            'binary_file_url': _('Enter a url from where the firmware can be downloaded'),
+            'binary_file_hash': _ ('Enter a SHA / Digest for the firmware, used to secure the firmware'),
+            'version': _('Set a semantic version for the firmware version'),
+            'manufacturer': _('Associate a manufacturer to the firmware'),
+            'friendly_name': _('Give it a friendly name e.g. May-2021 1.2 release'),
+            'is_active': _('Set if the firmware is active, dont forget to mark old firmware as inactive'),
+
+        }
+
+
 class FlightPlanCreateForm(forms.ModelForm):   
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -679,16 +915,16 @@ class FlightPlanCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        "geo_json",
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field("geo_json"),
                         ),
                     
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Flight Plan'),
+                                Submit('submit', _('+ Add Flight Plan')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'flightplans-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -714,7 +950,17 @@ class FlightPlanCreateForm(forms.ModelForm):
     class Meta:
         model = FlightPlan
         exclude = ('is_editable','plan_file_json',)
-        
+
+        labels = {
+            'name': _('Name'),
+            'geo_json': _('Geo json'),
+        }
+
+        help_texts = {
+            'name': _('Give this flight plan a friendly name'),
+            'geo_json': _('Paste the flight plan as GeoJSON'),
+        }
+
 
 class FlightPermissionCreateForm(forms.ModelForm):
     def __init__(self,*args,**kwargs):
@@ -726,6 +972,9 @@ class FlightPermissionCreateForm(forms.ModelForm):
                 BS5Accordion(
                     AccordionGroup("Mandatory Information",
                         FloatingField("operation"),
+                        FloatingField("status_code"),
+                        FloatingField('token'),
+                        FloatingField('geo_cage')
                         ),
                     ),
                     HTML("""
@@ -739,7 +988,8 @@ class FlightPermissionCreateForm(forms.ModelForm):
         
     class Meta:
         model = FlightPermission
-        fields = ('operation',)
+        fields = '__all__'
+        # fields = ('operation','status_code')
     
 
 class FlightLogCreateForm(forms.ModelForm):
@@ -752,16 +1002,16 @@ class FlightLogCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("operation"),
-                        FloatingField("raw_log"),
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("operation"),
+                        Field("raw_log"),
                         ),
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Log'),
+                                Submit('submit', _('+ Add Log')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'flightlogs-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -770,6 +1020,10 @@ class FlightLogCreateForm(forms.ModelForm):
     class Meta:
         model = FlightLog
         fields = ('operation','raw_log',)
+        labels = {
+            'operation': _('Operation'),
+            'raw_log': _('Raw log'),
+        }
         
 
 class FlightOperationCreateForm(forms.ModelForm):
@@ -783,24 +1037,24 @@ class FlightOperationCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        FloatingField("drone"),
-                        FloatingField("flight_plan"),
-                        FloatingField("purpose"),
-                        FloatingField("operator"),
-                        FloatingField("pilot"),
-                        "start_datetime",
-                        "end_datetime",
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field("drone"),
+                        Field("flight_plan"),
+                        Field("purpose"),
+                        Field("operator"),
+                        Field("pilot"),
+                        Field("start_datetime"),
+                        Field("end_datetime"),
                         ),
-                    AccordionGroup("Optional Information",
-                        FloatingField("type_of_operation")                                 
+                    AccordionGroup(_("Optional Information"),
+                        Field("type_of_operation")                                 
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Operation'),
+                                Submit('submit', _('+ Add Operation')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'flightoperations-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -824,7 +1078,26 @@ class FlightOperationCreateForm(forms.ModelForm):
             'end_datetime': forms.DateTimeInput( attrs={'class':'form-control', 'placeholder':'Select a date / time ', 'type':'datetime-local'}),
         }
         help_texts = {
-            'flight_plan': 'If a flight log is signed and is associated with a plan, that plan will not show here',
+            'name': _('Give a friendly name for this operation'),
+            'drone': _('Pick the drone that will be used to fly this opreation'),
+            'flight_plan': _('If a flight log is signed and is associated with a plan, that plan will not show here'),
+             'purpose': _('To add additional categories, please add entries to the Activities table'),
+            'operator': _('Assign a operator for this operaiton'),
+             'end_datetime': _('Specify Flight end date and time in Indian Standard Time (IST)'),
+             'type_of_operation': _('At the moment, only VLOS and BVLOS operations are supported, for other types of operations, please issue a pull-request'),
+             
+        }
+        labels = {
+            'name': _('Name'),
+            'drone': _('Drone'),
+            'flight_plan': _('Flightplan'),
+            'purpose': _('Purpose'),
+            'operator': _('Operator'),
+            'pilot': _('Pilot'),
+            'start_datetime': _('Start Date Time'),
+            'end_datetime': _('End Date Time'),
+            'type_of_operation': _('Type of operation'),
+            
         }
 
 class ContactCreateForm(forms.ModelForm):
@@ -835,27 +1108,37 @@ class ContactCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("operator"),
-                        FloatingField("person"),
-                        FloatingField("address"),
-                        FloatingField("role_type")
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("operator"),
+                        Field("person"),
+                        Field("address"),
+                        Field("role_type")
                         ),
                     
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Contact'),
+                                Submit('submit', _('+ Add Contact')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'contacts-list' %}" role="button">Cancel</a>""")
                     )
                 )     
         )
-
-    
     class Meta:
         model = Contact
-        fields = '__all__'
+        fields = ['operator','person','address','role_type']
+        labels = {
+            'operator': _('Operator'),
+            'person': _('Person'),
+            'address': _('Address'),
+            'role_type': _('Role type'),
+        }
+        help_texts = {
+        'operator': _('Set a operator for this contact'),
+        'person': _('Associat a person for this contact'),
+        'address': _('Add a address for this contact'),
+        'role_type': _('A contact may or may not be legally responsible officer within a company, specify if the contact is responsible(legally) for opration in the company '),
+    }
 
 
 class PilotCreateForm(forms.ModelForm):
@@ -866,17 +1149,22 @@ class PilotCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("operator"),
-                        FloatingField("person"),
-                        FloatingField("photo"),
-                        
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("operator"),
+                        Field("person"),
+                        # Field("photo"),
+                        # Field("photo"),
+                        # Field("identification_photo"),
+                        Field("documents"),
+                        Field("tests"),
+                        Field("address"),
+                        Field("is_active"),
                         ),
                         
-                    AccordionGroup("Optional Information",
-                        FloatingField("photo"),
-                        FloatingField("identification_photo"),
-                        FloatingField("tests"),
+                    AccordionGroup(_("Optional Information"),
+                        Field("photo"),
+                        Field("identification_photo"),
+                        Field("tests"),
                         ),                                 
                     ),
                     
@@ -884,7 +1172,7 @@ class PilotCreateForm(forms.ModelForm):
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Pilot'),
+                                Submit('submit', _('+ Add Pilot')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'pilots-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -893,6 +1181,25 @@ class PilotCreateForm(forms.ModelForm):
     class Meta:
         model = Pilot
         fields = '__all__'
+
+        labels = {
+                    'operator': _('First Name'),
+                    'person': _('Person*'),
+                    'tests': _('Tests'),
+                    'address': _('Address'),
+                    'photo': _('Photo'),
+                    'is_active': ('Is active'),
+                    'documents': _('Documents'),
+                   
+                }
+        help_texts = {
+                        'photo': _('A URL to link to a photo of the pilot'),
+                        'is_active': _('Is this pilot active? If he is not working for the company or has moved on, set it as inactive'),
+                        'address': _('Assign a address to this Pilot'),
+                        'tests': _('Specify the tests if any the pilot has taken'),
+                        'person': _('Assign this pilot to a person object in the database'),
+                       'operator': _('Assign this pilot to a operator'),
+                    }
 
 # class DigitalSkyLogCreateForm(forms.ModelForm):
 #     class Meta:
@@ -912,22 +1219,22 @@ class AuthorizationCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("title"),
-                        FloatingField("operation_max_height"),
-                        FloatingField("operation_altitude_system"),
-                        FloatingField("airspace_type"),
-                        FloatingField("operation_area_type"),
-                        FloatingField("risk_type"),
-                        FloatingField("authorization_type"),
-                        "permit_to_fly_above_crowd",
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("title"),
+                        Field("operation_max_height"),
+                        Field("operation_altitude_system"),
+                        Field("airspace_type"),
+                        Field("operation_area_type"),
+                        Field("risk_type"),
+                        Field("authorization_type"),
+                        Field("permit_to_fly_above_crowd"),
                         ),                   
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Activity'),
+                                Submit('submit', _('+ Add Activity')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'activities-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -935,7 +1242,27 @@ class AuthorizationCreateForm(forms.ModelForm):
         model = Authorization
         # exclude = ('is_created',)
         fields = '__all__'
-        
+        labels = {
+            'title': _('Title'),
+            'operation_max_height': _('Operation max height'),
+            'operation_altitude_system': _('Operation altitude system'),
+            'airspace_type': _('Airspace type'),
+            'operation_area_type': _('Operation area type'),
+            'risk_type': _('Risk type'),
+            'authorization_type': _('Authorization type'),
+            'permit_to_fly_above_crowd': _('Permit to fly above crowd '),
+        }
+        help_texts = {
+        'operation_max_height': _('Specify the company associated with this operator'),
+        'operation_altitude_system': _('Choose what kind of operator this is, classify the operator based on capabilites, use the adminsitration panel to add additional operator categories'),
+        'airspace_type': _('Set the airspace type, if available'),
+        'operation_area_type': _('Can the operator fly over crowds? '),
+        'risk_type': _('If available, set the airspace risk type'),
+        'authorization_type': _('Set the type of the authorization'),
+        'permit_to_fly_above_crowd': _('Select if the company is permitted to fly above crowd'),
+          
+            }
+     
 class ActivityCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -944,16 +1271,16 @@ class ActivityCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        'activity_type'
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field('activity_type')
                         ),                   
                     ),
                     HTML("""
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Activity'),
+                                Submit('submit',_('+ Add Activity')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'activities-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -962,6 +1289,15 @@ class ActivityCreateForm(forms.ModelForm):
         model = Activity
         # exclude = ('is_created',)
         fields = '__all__'
+        labels = {
+            'name': _('Name'),
+            'activity_type': _('Activity Type'),
+        }
+        help_texts = {
+        'name': _('Set a name for this activity'),
+        'activity_type': _('Set the activity type and the airspace'),
+    }
+        
         
 class TokenCreateForm(forms.ModelForm):
     def __init__(self, *args, **kwargs):
@@ -971,17 +1307,17 @@ class TokenCreateForm(forms.ModelForm):
         
         self.helper.layout = Layout(
                 BS5Accordion(
-                    AccordionGroup("Mandatory Information",
-                        FloatingField("name"),
-                        FloatingField("token_type"),
-                        FloatingField("extension"),
-                        FloatingField("association"),
-                        "credential"
+                    AccordionGroup(_("Mandatory Information"),
+                        Field("name"),
+                        Field("token_type"),
+                        Field("extension"),
+                        Field("association"),
+                        Field("credential"),
                     ),
-                    AccordionGroup("Optional Information",
-                        FloatingField("aircraft"),
-                        FloatingField("manufacturer"),
-                        FloatingField("operator"),
+                    AccordionGroup(_("Optional Information"),
+                        Field("aircraft"),
+                        Field("manufacturer"),
+                        Field("operator"),
                         'is_active'
                         ),                   
                     ),
@@ -989,7 +1325,7 @@ class TokenCreateForm(forms.ModelForm):
                             <br>
                         """),
                     ButtonHolder(
-                                Submit('submit', '+ Add Credentials'),
+                                Submit('submit', _('+ Add Credentials')),
                                 HTML("""<a class="btn btn-secondary" href="{% url 'credentials-list' %}" role="button">Cancel</a>""")
                     )
                 )     
@@ -997,23 +1333,54 @@ class TokenCreateForm(forms.ModelForm):
     credential = forms.CharField(widget=forms.Textarea, help_text="Paste the credential as plain text here")
     class Meta:
         model = AerobridgeCredential
-        # fields = '__all__'
+        # fields = 'all'
         exclude = ('token',)
+        labels = {
+            'name': _('Name'),
+            'token_type': _('Token typeDrone'),
+            'extension': _('Extension'),
+            'association': _('Association'),
+            'credential': _('Credential'),
+            'aircraft': _('Aircraft'),
+            'manufacturer': _('Manufacturer'),
+            'operator': _('Operator'),
+            'is_active': _('Is active'),
+        }
+        help_texts = {
+            'name': _('Give a friendly name for this operation'),
+            'token_type': _('Pick the drone that will be used to fly this opreation'),
+           ' extension': _('Specify the data format for this credential, if known'),
+            'association': _('If a flight log is signed and is associated with a plan, that plan will not show here'),
+            'credential': _('Paste the credential as plain text here'),
+            'operator': _('Assign a operator for this operaiton'),
+            'is_active': _(' Set whether the credential is still active'),
         
+        }
         
         
 class CustomCloudFileCreateForm(forms.Form):
     
     UPLOAD_TYPE = (
-        ('logs', 'Logs'),
-        ('documents', 'Documents'),
-        ('receipts', 'Receipts'),
-        ('invoices', 'Invoices'),
-        ('other', 'Other'),
+        ('logs', _('Logs')),
+        ('documents', _('Documents')),
+        ('receipts', _('Receipts')),
+        ('invoices', _('Invoices')),
+        ('other', _('Other')),
     )
     file = forms.FileField()
     file_type = forms.CharField(max_length=140,widget=forms.Select(choices=UPLOAD_TYPE))
     name = forms.CharField()
+
+    labels = {
+            'file': _('File'),
+            'file_type': _('File type'),
+            'name': _('Name'),
+        }
+        
+    file = forms.FileField(label=_('File'))
+    file_type = forms.CharField(max_length=140, label=_('File type'), widget=forms.Select(choices=UPLOAD_TYPE))
+    name = forms.CharField(label=_('Name'))
+
         
 class CutsomTokenCreateForm(forms.Form):
     name = forms.CharField(max_length=100)

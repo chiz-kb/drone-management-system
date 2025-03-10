@@ -3,7 +3,7 @@
 {% block content %}
 
 <div class="row mb-3">
-    <h2>Signed Flight Log Details</h2>
+    <h2> {% trans "Signed Flight Log Details" %}</h2>
     <div class="col-md-6 themed-grid-col">
     {% if signed_flightlog.signed_log %}
         <table class="table">
@@ -15,21 +15,21 @@
             </thead>
         
             <tr>
-                <td>Raw Flight Log</td>
+                <td> {% trans "Raw Flight Log" %}</td>
                 <td><p class="flush">{{ signed_flightlog.raw_flight_log.raw_log }}</p></td>    
             </tr>
             <tr>
-                <td>Signed Flight Log</td>
+                <td> {% trans "Signed Flight Log" %}</td>
                 <td><p class="flush">{{ signed_flightlog.signed_log }}</p></td>    
             </tr>
             <tr>
-                <td>Signed by:</td>
+                <td> {% trans "Signed by:" %}</td>
                 <td>{{ signed_flightlog.raw_flight_log.operation.drone.model}}</td>    
             </tr>
             
         </table>
     {% else %}
-    <p>No signed flight log exists, please sign the log first via the GCS or the user interface.</p>
+    <p> {% trans "No signed flight log exists, please sign the log first via the GCS or the user interface." %}</p>
     {% endif %}
 </div>
 </div>

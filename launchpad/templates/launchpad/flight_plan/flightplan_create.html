@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
 
-    <h2>Add new Flight plan</h2>
-    <p>Create a new flight plan, link it to a Operation and get permission artefacts against those operations</p>
+    <h2>{% trans "Add new Flight plan" %}</h2>
+    <p>{% trans "Create a new flight plan, link it to a Operation and get permission artefacts against those operations" %}</p>
 
     <form action="" method="post">
         {% csrf_token %}

@@ -1,20 +1,21 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Equipment
+        {% trans "Equipment" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Aircraft Assembly Details
+        {% trans "Aircraft Assembly Details" %}
       </li>
     </ol>
   </nav>
 <div>
 <br>
-<h2>Assembly for <a href="/launchpad/aircrafts/{{aircraft.id}}/detail">{{ aircraft.name }}</a></h2>
+<h2>{% trans "Assembly for" %} <a href="/launchpad/aircrafts/{{aircraft.id}}/detail">{{ aircraft.name }}</a></h2>
 <br>
 <p><img src="{{aircraft.photo}}" class="thumbnail"></p>
 <br>

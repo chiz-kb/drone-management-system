@@ -1,19 +1,20 @@
-{% extends "launchpad/layout.html" %} 
+{% extends "launchpad/layout.html" %}
+{% load i18n %}  
 {% load rest_framework %}
 {% block content %}
 
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Contacts
+        {% trans "Contacts" %}
       </li>
     </ol>
   </nav>
 
-<h2>Contact Details</h2>
+<h2>{% trans "Contact Details" %}</h2>
 <br>
 
 <table  class="table">
@@ -25,25 +26,25 @@
     </thead>
 
     <tr>
-        <td>Type</td>
+        <td>{% trans "Type" %}</td>
         <td>{{ contact.get_role_type_display }}</td>    
     </tr>
     <tr>
-        <td>Operator</td>
+        <td>{% trans "Operator" %}</td>
         <td>{{ contact.operator.company }}</td>
     </tr>
     <tr>
-        <td>Full Name</td>
+        <td>{% trans "Full Name" %}</td>
         <td><b>{{contact.person.first_name}} {{contact.person.last_name}}</b></td>
     </tr>
     <tr>
-        <td>Address</td>
+        <td>{% trans "Address" %}</td>
         <td>{{contact.address.address_line_1}}, {{contact.address.city}}</td>
     </tr>
     
 </table>
 <br>
-<p><a class="btn btn-primary" href="/launchpad/contacts/{{contact.id}}"><b>Update Details</b></a></p>
+<p><a class="btn btn-primary" href="/launchpad/contacts/{{contact.id}}"><b>{% trans "Update Details" %}</b></a></p>
 
 
 {% endblock %}

@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        People
+        {% trans "People" %}
       </li>
     </ol>
 </nav>
@@ -18,9 +19,9 @@
 
 <div class="row mb-3">
 
-    <h2>People</h2>
-    <p>A list of everyone (Pilots / Contacts) on the server, click to see / change details of an individual person,
-        people can be assigned to Operators, Manufacturers, Tokens.</p>
+    <h2>{% trans "People" %}</h2>
+    <p>{% trans "A list of everyone (Pilots / Contacts) on the server, click to see / change details of an individual person,
+        people can be assigned to Operators, Manufacturers, Tokens." %}</p>
 </div>
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">  
@@ -32,11 +33,11 @@
                     </small></li>
                 {% endfor %}
             {% else %}
-                <li class="list-group-item"><p class="text-muted"><i>There are no people added in Aerobridge, once added the list of people will be displayed here.</i></p></li>
+                <li class="list-group-item"><p class="text-muted"><i>{% trans "There are no people added in Aerobridge, once added the list of people will be displayed here." %}</i></p></li>
             {% endif %}
         </ul>
         <br>
-        <p><a class="btn btn-primary" href="/launchpad/people/new"><b>&#43; Add a person</b></a></p>
+        <p><a class="btn btn-primary" href="/launchpad/people/new"><b>&#43; {% trans "Add a person" %}</b></a></p>
     </div>
     <div class="col-md-6 themed-grid-col"></div>
 </div>

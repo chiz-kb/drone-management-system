@@ -1,16 +1,17 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
 <div class="alert alert-primary" role="alert">
-    <span class="bi bi-bell-fill"></span> You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations. 
+    <span class="bi bi-bell-fill"></span> {% trans "You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations." %}
   </div>
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
         
 
 <div>
-    <h2>Firmware Details</h2>
+    <h2>{% trans "Firmware Details" %}</h2>
     <br>
     <table class="table">
         <thead>
@@ -20,31 +21,31 @@
             </tr>
         </thead>
         <tr>
-            <td>Binary File Url</td>
+            <td>{% trans "Binary File Url" %}</td>
             <td><a href="{{ firmware.binary_file_url }}">{{ firmware.binary_file_url }}</a></td>
         </tr>
         <tr>
-            <td>Binary File Hash</td>
+            <td>{% trans "Binary File Hash" %}</td>
             <td>{{ firmware.binary_file_hash }}</td>
         </tr>
         <tr>
-            <td>Version</td>
+            <td>{% trans "Version" %}</td>
             <td>{{ firmware.version}}</td>    
         </tr>
         </tr>
         <tr>
-            <td>Friendly Name</td>
+            <td>{% trans "Friendly Name" %}</td>
             <td>{{ firmware.friendly_name}}</td>    
         </tr>
         </tr>
         <tr>
-            <td>Is Active?</td>
+            <td>{% trans "Is Active?" %}</td>
             <td><mark>{{ firmware.is_active}}</mark></td>    
         </tr>
     </table>
-    <p class="text-muted">Last Updated at {{firmware.updated_at|date:'Y-m-d H:i' }} </p>
+    <p class="text-muted">{% trans "Last Updated at" %} {{firmware.updated_at|date:'Y-m-d H:i' }} </p>
     <br>
-    <p><a class="btn btn-primary" href="/launchpad/firmwares/{{firmware.id}}"><b>Update Details</b></a></p>
+    <p><a class="btn btn-primary" href="/launchpad/firmwares/{{firmware.id}}"><b>{% trans "Update Details" %}</b></a></p>
     
     </div>
 </div>

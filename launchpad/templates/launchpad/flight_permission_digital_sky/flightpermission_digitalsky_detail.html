@@ -1,9 +1,10 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 <div>
-<h1>Permission Details</h1>
-<p>Please find below the details of flight permission artefacts applied downloaded from Digital Sky.</p>
+<h1>{% trans "Permission Details" %}</h1>
+<p>{% trans "Please find below the details of flight permission artefacts applied downloaded from Digital Sky." %}</p>
 <br>
 
 <table class="table">
@@ -14,17 +15,17 @@
         </tr>
     </thead>
     <tr>
-        <td>Operation</td>
+        <td>{% trans "Operation" %}</td>
         <td><a href="/launchpad/flightoperations/{{ flightpermission.operation.id }}/detail">{{ flightpermission.operation.name }}</a></td>
     </tr>
     <tr>
-        <td>Applied Successfully</td>
+        <td>{% trans "Applied Successfully" %}</td>
         <td><code>{{ flightpermission.is_successful }}</code></td>    
     </tr>
     
 </table>
 <form action="{% url 'flightpermissions-digitalsky-request' flightpermission_id=flightpermission.pk %}" method="POST">
-<p><button class="btn btn-primary" type="submit" value="Request">Request Permission from Digital Sky</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'flightpermissions-digitalsky-list' %}" role="button">Cancel</a></p>
+<p><button class="btn btn-primary" type="submit" value="Request">{% trans "Request Permission from Digital Sky" %}</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'flightpermissions-digitalsky-list' %}" role="button">Cancel</a></p>
 </form>
 
 </div>

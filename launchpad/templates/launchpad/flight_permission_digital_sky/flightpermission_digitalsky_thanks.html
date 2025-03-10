@@ -1,10 +1,11 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %}
 {% block content %}
 
 <div class="row mb-3">
 
-    <h2>Permission Request submitted</h2>
-    <p>Your request for permission has been sent to DigitalSky. If you are looking to download a permission artefact, please use the use the <a href="/launchpad/flightpermissions">Flight Permissions</a> menu.  To see the response from the DigitalSky, you can review the <a href="/launchpad/digitalsky-logs">DigitalSky Logs</a>. For a step-by-step review of the flow, please review the <a href="/launchpad/flight-permissions-read-first">README</a></p>
+    <h2>{% trans "Permission Request submitted" %}</h2>
+    <p>{% trans "Your request for permission has been sent to DigitalSky. If you are looking to download a permission artefact, please use the use the" %} <a href="/launchpad/flightpermissions">{% trans "Flight Permissions" %}</a>{% trans " menu.  To see the response from the DigitalSky, you can review the" %} <a href="/launchpad/digitalsky-logs">{% trans "DigitalSky Logs" %}</a>. {% trans "For a step-by-step review of the flow, please review the " %}<a href="/launchpad/flight-permissions-read-first">{% trans "README" %}</a></p>
 
 </div>
 

@@ -89,7 +89,8 @@ class FlightPermission(models.Model):
     status_code = models.CharField(
         max_length=20,
         choices=PERMISSION_STATUS_CHOICES,
-        default=DENIED, help_text="Permissions")
+        default=PENDING,
+        help_text="Permissions")
     
     def __unicode__(self):
        return self.operation.name

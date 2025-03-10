@@ -1,12 +1,14 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Trusted Flights
+        {% trans "Trusted Flights" %}
+      
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Signed Logs
+        {% trans "Signed Logs" %}
       </li>
     </ol>
   </nav>
@@ -15,8 +17,8 @@
 
 <div class="row mb-3">
     
-    <h2>Signed Flight Logs list</h2><br>
-    <p>See the details of flight logs signed by the management server, to sign a log, go to Trusted Flights -> Upload Flight Logs.</p>
+    <h2> {% trans "Signed Flight Logs list" %}</h2><br>
+    <p> {% trans "See the details of flight logs signed by the management server, to sign a log, go to Trusted Flights -> Upload Flight Logs." %}</p>
 </div>
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
@@ -28,7 +30,7 @@
         {% endfor %}      
         
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no signed flight logs in Aerobridge, once a log is signed a list of signed logs will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i> {% trans "There are no signed flight logs in Aerobridge, once a log is signed a list of signed logs will be displayed here." %}</i></p></li>
         {% endif %}  
     </ul>
     <br>

@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Operations
+        {% trans  "Operations" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Incidents
+        {% trans  "Incidents" %}
       </li>
     </ol>
   </nav>
@@ -14,8 +15,8 @@
 
 {% block content %}
 <div class="row mb-3">
-    <h2>Incidents</h2>
-    <p>A list of all incidents as reported in Aerobridge or see them as a <i class="bi bi-calendar-date"></i>&nbsp;<a href="/launchpad/incidents/calendar">calendar</a></p>
+    <h2>{% trans  "Incidents" %}</h2>
+    <p>{% trans  "A list of all incidents as reported in Aerobridge or see them as a " %}<i class="bi bi-calendar-date"></i>&nbsp;<a href="/launchpad/incidents/calendar">{% trans "calendar" %}</a></p>
 </div>
 <div class="row mb-3">      
     <div class="col-md-8 themed-grid-col">
@@ -25,11 +26,11 @@
             <li class="list-group-item"><a href="/launchpad/incidents/{{incident.id}}/detail">{{ incident }}</a>&nbsp;&nbsp;<small class="text-muted">&mdash; Created at {{ incident.created_at }} </small></li>
             {% endfor %}
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no incidents added in Aerobridge, once added a list of incidents will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i>{% trans  "There are no incidents added in Aerobridge, once added a list of incidents will be displayed here." %}</i></p></li>
         {% endif %}
     </ul>
     <br>
-    <small class="text-muted">To add an incident to this list, go to Trusted Flights -> Aircraft and report a incident from there</small>
+    <small class="text-muted">{% trans  "To add an incident to this list, go to Trusted Flights -> Aircraft and report a incident from there" %}</small>
 </div>
 <div class="col-md-4 themed-grid-col"></div>
 </div>

@@ -1,9 +1,10 @@
 from django.urls import path, re_path
 from . import views as launchpad_views
 
+# app_name =""
+
 urlpatterns = [
-    path('', launchpad_views.HomeView.as_view()),
-    path('addresses', launchpad_views.AddressList.as_view(), name='addresses-list'),
+    path('', launchpad_views.HomeView.as_view(), name='home-view'),    path('addresses', launchpad_views.AddressList.as_view(), name='addresses-list'),
     path('addresses/<uuid:address_id>', launchpad_views.AddressDetail.as_view(), name='addresses-detail'),
     path('addresses/new', launchpad_views.AddressCreateView.as_view(), name='addresses-create'),
 
@@ -116,10 +117,10 @@ urlpatterns = [
     path('flightpermissions-read-first', launchpad_views.FlightPermissionsReadFirst.as_view(), name='flightpermissions-read-first'),
     path('flightpermissions/<uuid:flightpermission_id>/detail', launchpad_views.FlightPermissionsDetail.as_view(), name='flightpermissions-detail'),    
     
-    # path('flightpermissions/new', launchpad_views.FlightPermissionCreateView.as_view(), name='flightpermissions-create'),
-    # path('digitalsky-flight-permissions', launchpad_views.FlightPermissionDigitalSkyList.as_view(), name='flightpermissions-digitalsky-list'),
-    # path('digitalsky-flight-permissions/thanks', launchpad_views.FlightPermissionDigitalSkyThanks.as_view(), name='flightpermissions-digitalsky-thanks'),
-    # path('digitalsky-flight-permissions/<uuid:flightpermission_id>/request', launchpad_views.FlightPermissionDigitalSkyRequest.as_view(), name='flightpermissions-digitalsky-request'),
+    path('flightpermissions/new', launchpad_views.FlightPermissionCreateView.as_view(), name='flightpermissions-create'),
+    path('digitalsky-flight-permissions', launchpad_views.FlightPermissionDigitalSkyList.as_view(), name='flightpermissions-digitalsky-list'),
+    path('digitalsky-flight-permissions/thanks', launchpad_views.FlightPermissionDigitalSkyThanks.as_view(), name='flightpermissions-digitalsky-thanks'),
+    path('digitalsky-flight-permissions/<uuid:flightpermission_id>/request', launchpad_views.FlightPermissionDigitalSkyRequest.as_view(), name='flightpermissions-digitalsky-request'),
  
     path('flightlogs', launchpad_views.FlightLogsList.as_view(), name='flightlogs-list'),
     path('flightlogs/calendar', launchpad_views.FlightLogsCalender.as_view(), name='flightlogs-calendar'),

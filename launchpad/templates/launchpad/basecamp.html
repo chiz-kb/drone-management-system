@@ -1,18 +1,39 @@
-{% extends "launchpad/layout.html" %} {% load static %}
+{% extends "launchpad/layout.html" %} 
+{% load i18n %}
+{% load static %}
 {% block content %}
-
-
-
-<div class="container col-xxl-8 px-4 py-5">
-    <div class="row flex-lg-row-reverse align-items-center g-5 py-5">
+<div class="container col-xxl-8 px-1 py-0">
+    <div class="row flex-lg-row-reverse  g-5 py-0">
+      <h2 style="color:blue;">{% trans "Ethiopian Civil Aviation Launchpad" %}</h2>
       <div class="col-10 col-sm-8 col-lg-6">
-        <img src="{% static "jetway/images/20140801_PIA00452.jpg" %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        <img src="{% static "jetway/images/Ethiopian-Civil-Aviation-Authority.png" %}" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
       </div>
       <div class="col-lg-6">
-        <h1 class="display-5 fw-bold lh-1 mb-3">Aerobridge Launchpad</h1>
-        <p class="lead">Welcome to the test server deployment, use the menus to explore different aspects of the management server, this server is regularly rebuilt as the code base evolves.</p><p>Image source: <a href="https://www.planetary.org/worlds/pale-blue-dot">Planetary Society</a></p>
+        {% comment %} <h2 style="color:blue;">{% trans "Ethiopian Civil Aviation Launchpad" %}</h2> {% endcomment %}
+        <h5 style="color:blue;">{% trans "Our Vision:" %}</h5>
+        <p class="lead">{% trans "Building internationally competent and secured civil aviation by 2025." %}</p>
+        <h5 style="color:blue;">{% trans "Our Mission:" %}</h5>
+        <p class="lead">{% trans "To enable the public get access to reliable Air transport service by ensuring Aviation safety and security through effective regulatory function, environmental protection, provision of Air navigation services, by strengthening global cooperation and partnership." %}</p>
+        <h5 style="color:blue;">{% trans "The objective of the Authority shall be:" %}</h5>
+        <ol class="lead">
+          <li >{% trans "To promote and maintain an efficient and economical civil air service and" %}</li>
+          <li >{% trans "General aviation service system and to ensure the provision of highly secure and safe air service;" %}</li>
+          <li >{% trans "To develop domestic and international air transportation networks and to ensure a reliable and sustainable air transport system;" %}</li>
+          <li >{% trans "To implement and enforce laws, regulations and directives relating to civil aviation as well as reaties to which Ethiopia is a party." %}</li>
+        </ol>
+        <h5 style="color:blue;">{% trans "Our Value:" %}</h5>
+        <ul class="lead">
+          <li>{% trans "Safety First" %}</li>
+          <li>{% trans "Team Work" %}</li>
+          <li>{% trans "Think Globally Act Locally" %}</li>
+          <li>{% trans "Committed to Excellence" %}</li>
+          <li>{% trans "Our Efforts our Achievement" %}</li>
+        </ul>
+        {% comment %} <p class="lead">{% trans "Welcome to the test server deployment, use the menus to explore different aspects of the management server, this server is regularly rebuilt as the code base evolves." %}</p> {% endcomment %}
+        {% comment %} </p><p>Image source: <a href="https://www.planetary.org/worlds/pale-blue-dot">Planetary Society</a></p> {% endcomment %}
+        <a href="http://www.ecaa.gov.et/Home/wp-content/uploads/2019/circular/Aircraft%20Operartion/rule/ECARAS%20PART%209%20Air%20Operator%20Certification%20and%20Administration.pdf">{% trans "Air Operator Certification and Administration" %}</a>
+        
     </div>
-
     </div>
     </div>
   

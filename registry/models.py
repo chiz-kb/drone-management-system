@@ -49,19 +49,19 @@ class AerobridgeDocument(models.Model):
 
 class Person(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    first_name = models.CharField(max_length=30, help_text="The first name of the person added to the database")
-    middle_name = models.CharField(max_length=30, null=True, blank=True)
-    last_name = models.CharField(max_length=30)
-    email = models.EmailField(help_text="Associate a email address with the person, this field is required")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17,
-                                    help_text="Associate a phone number with this person")
+    first_name = models.CharField(max_length=30, verbose_name=_("First name"),help_text=_("The first name of the person added to the database"))
+    middle_name = models.CharField(max_length=30, null=True,verbose_name=_("Middle name"), blank=True)
+    last_name = models.CharField(max_length=30,verbose_name=_("Last name"))
+    email = models.EmailField(verbose_name=_("Email"), help_text=_("Associate a email address with the person, this field is required"))
+    phone_number = models.CharField(validators=[phone_regex], max_length=17,verbose_name=_("Phone number"),
+                                    help_text=_("Associate a phone number with this person"))
 
-    documents = models.ManyToManyField(AerobridgeDocument)   
-    social_security_number = models.CharField(max_length=25, blank=True, null=True,
-                                              help_text="If social security / identification number is avaialble associate it with a person")
+    documents = models.ManyToManyField(AerobridgeDocument,verbose_name=_("Documents"))   
+    social_security_number = models.CharField(max_length=25, blank=True, null=True,verbose_name=_("Social security number"),
+                                              help_text=_("If social security / identification number is avaialble associate it with a person"))
                                 
-    date_of_birth = models.DateField(blank=True, null=True, help_text="Assign a date of birth with this person")
-    is_active = models.BooleanField(default= True, help_text="Set if the person is still active / works for the company")
+    date_of_birth = models.DateField(blank=True, null=True, help_text=_("Assign a date of birth with this person"),verbose_name=_("Date of birth"))
+    is_active = models.BooleanField(default= True,verbose_name=_("Is active"), help_text=_("Set if the person is still active / works for the company"))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -91,8 +91,8 @@ class Address(models.Model):
     postcode = models.CharField(_("post code"), max_length=10)
     city = models.CharField(max_length=140, help_text="Set a city for this address")
     state = models.CharField(max_length=2, blank=True, null=True, choices=STATE_CHOICES,
-                             help_text="Pick a state, at the moment only Indian States are configured.")
-    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='IN')
+                             help_text="Pick a state")
+    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='ET')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -190,29 +190,34 @@ class TypeCertificate(models.Model):
 class Company(models.Model):
 
     COMPANY_TYPE = (
-    (0, _('Supplier')), (1, _('Manufacturer')), (2, _('Operator')), (3, _('Customer')),(4, _('Assembler')), )
+    (0, _('Supplier')),
+    (1, _('Manufacturer')),
+    (2, _('Operator')),
+    (3, _('Customer')),
+    (4, _('Assembler')),
+    )
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    full_name = models.CharField(max_length=140, help_text="Full legal name of the manufacturing entity")
-    common_name = models.CharField(max_length=140, help_text="Common name for the manufacturer e.g. Skydio")
-    address = models.ForeignKey(Address, models.CASCADE, blank=True, null=True,
-                                help_text="Assign a address to this manufacturers")
+    full_name = models.CharField(max_length=140, verbose_name=_("Full name"), help_text=_("Full legal name of the manufacturing entity"))
+    common_name = models.CharField(max_length=140, verbose_name=_("Common name"), help_text=_("Common name for the manufacturer e.g. Skydio"))
+    address = models.ForeignKey(Address, models.CASCADE, blank=True, null=True, verbose_name=_("Address"),
+                                help_text=_("Assign a address to this manufacturers"))
                                     
-    country = models.CharField(max_length=3,
-                               help_text="The three-letter ISO 3166-1 country code where the manufacturer is located")
-    website = models.URLField(
-        help_text="Put official URL of the company, if none is available then a manufacturers public facing URL is necessary", validators=[validate_url])
-    email = models.EmailField(help_text="Contact email for support and other queries")
-    phone_number = models.CharField(validators=[phone_regex], max_length=17, blank=True)  #                           
-    documents = models.ManyToManyField(AerobridgeDocument, help_text = "You can upload and associate documents to the manufacturer")   
-    vat_number = models.CharField(max_length=25, default="VAT-TMP", validators=[no_special_characters_regex, ],
-                                  blank=True, null=True, help_text="VAT / Tax number if available")
-    insurance_number = models.CharField(max_length=25, default="INS-TMP", validators=[no_special_characters_regex, ],
-                                        blank=True, null=True, help_text="Insurance number if avaialble")
-    company_number = models.CharField(max_length=25, default='CO-TMP', validators=[no_special_characters_regex, ],
-                                      blank=True, null=True, help_text="Company number if available ")
-    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='IN',
-                               help_text="At the moment only India is configured, you can setup your own country")
+    country = models.CharField(max_length=3,verbose_name=_("Country"),
+                               help_text=_("The three-letter ISO 3166-1 country code where the manufacturer is located"))
+    website = models.URLField(verbose_name=_("Website"),
+        help_text=_("Put official URL of the company, if none is available then a manufacturers public facing URL is necessary"), validators=[validate_url])
+    email = models.EmailField(verbose_name=_("Email"), help_text=_("Contact email for support and other queries"))
+    phone_number = models.CharField(validators=[phone_regex], max_length=17,verbose_name=_("Phone number"), blank=True)  #                           
+    documents = models.ManyToManyField(AerobridgeDocument, verbose_name=_("Documents"), help_text = _("You can upload and associate documents to the manufacturer"))  
+    vat_number = models.CharField(max_length=25, default=_("VAT-TMP"), validators=[no_special_characters_regex, ],
+                                  blank=True, null=True, verbose_name=_("Vat number"), help_text=_("VAT / Tax number if available"))
+    insurance_number = models.CharField(max_length=25, default=_("INS-TMP"), validators=[no_special_characters_regex, ],
+                                        blank=True, null=True,  verbose_name=_("Insurance number"), help_text=_("Insurance number if avaialble"))
+    company_number = models.CharField(max_length=25, default=_('CO-TMP'), validators=[no_special_characters_regex, ],
+                                      blank=True, null=True, verbose_name=_("Company number"), help_text=_("Company number if available "))
+    country = models.CharField(max_length=2, choices=countries.COUNTRY_CHOICES_ISO3166, default='IN',verbose_name=_("Country"),
+                               help_text=_("At the moment only India is configured, you can setup your own country"))
 
     currency = models.CharField(
         max_length=3,
@@ -223,8 +228,8 @@ class Company(models.Model):
         validators=[validate_currency_code],
     )
 
-    role = models.IntegerField(choices=COMPANY_TYPE, default=3,
-                                 help_text="Set the type of the company")
+    role = models.IntegerField(choices=COMPANY_TYPE, default=3,verbose_name=_("Role"),
+                                 help_text=_("Set the type of the company"))
     @property
     def currency_code(self):
         """
@@ -309,13 +314,13 @@ class Company(models.Model):
 class Firmware(models.Model):
     ''' A model for custom firmware '''
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    binary_file_url = models.URLField(help_text="Enter a url from where the firmware can be downloaded",validators=[validate_url])
-    binary_file_hash = models.TextField(help_text="Enter a SHA / Digest for the firmware, used to secure the firmware")
-    version = models.CharField(max_length=25, help_text="Set a semantic version for the firmware version")
-    manufacturer = models.ForeignKey(Company, models.CASCADE, help_text="Associate a manufacturer to the firmware", limit_choices_to={'role':1})
-    friendly_name = models.CharField(max_length=140, help_text="Give it a friendly name e.g. May-2021 1.2 release")
-    is_active = models.BooleanField(default=False,
-                                    help_text="Set if the firmware is active, don't forget to mark old firmware as inactive")
+    binary_file_url = models.URLField(verbose_name=_("Binary file url"), help_text=_("Enter a url from where the firmware can be downloaded"),validators=[validate_url])
+    binary_file_hash = models.TextField(verbose_name=_("Binary file hash"),help_text=_("Enter a SHA / Digest for the firmware, used to secure the firmware"))
+    version = models.CharField(max_length=25,verbose_name=_("Version"), help_text=_("Set a semantic version for the firmware version"))
+    manufacturer = models.ForeignKey(Company, models.CASCADE,verbose_name=_("Manufacturer"), help_text=_("Associate a manufacturer to the firmware"), limit_choices_to={'role':1})
+    friendly_name = models.CharField(max_length=140,verbose_name=_("Friendly name"), help_text=_("Give it a friendly name e.g. May-2021 1.2 release"))
+    is_active = models.BooleanField(default=False,verbose_name=_("Is active"),
+                                    help_text=_("Set if the firmware is active, don't forget to mark old firmware as inactive"))
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -367,30 +372,30 @@ class Contact(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __unicode__(self):
-        return  self.operator.company_name +  ' : '+ self.person.first_name + ' ' + self.person.last_name + ' : '
+        return  self.operator.company.full_name +  ' : '+ self.person.first_name + ' ' + self.person.last_name + ' : '
 
     def __str__(self):
-        return self.operator.company_name + ' : ' +self.person.first_name + ' ' + self.person.last_name 
+        return self.operator.company.full_name + ' : ' +self.person.first_name + ' ' + self.person.last_name 
 
 
 class Pilot(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    operator = models.ForeignKey(Operator, models.CASCADE, help_text="Assign this pilot to a operator")
-    person = models.OneToOneField(Person, models.CASCADE,
-                                  help_text="Assign this pilot to a person object in the database")
-    photo = models.URLField(blank=True, null=True, validators=[validate_url],
-                            help_text="A URL to link to a photo of the pilot")
+    operator = models.ForeignKey(Operator, models.CASCADE, verbose_name=_("Operator"), help_text=_("Assign this pilot to a operator"))
+    person = models.OneToOneField(Person, models.CASCADE,verbose_name=_("Person"),
+                                  help_text=_("Assign this pilot to a person object in the database"))
+    photo = models.URLField(blank=True, null=True, validators=[validate_url],verbose_name=_("Photo"),
+                            help_text=_("A URL to link to a photo of the pilot"))
 
-    address = models.ForeignKey(Address, models.CASCADE, help_text="Assign a address to this Pilot")
+    address = models.ForeignKey(Address, models.CASCADE,verbose_name=_("Address"), help_text=_("Assign a address to this Pilot"))
     
-    documents = models.ManyToManyField(AerobridgeDocument)   
+    documents = models.ManyToManyField(AerobridgeDocument, verbose_name=_("Documents"))   
                                 
     tests = models.ManyToManyField(Test, through='TestValidity',
-                                   help_text="Specify the tests if any the pilot has taken")
+                                   help_text=_("Specify the tests if any the pilot has taken"))
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     is_active = models.BooleanField(default=0,
-                                    help_text="Is this pilot active? If he is not working for the company or has moved on, set it as inactive")
+                                    help_text=_("Is this pilot active? If he is not working for the company or has moved on, set it as inactive"))
 
     def __unicode__(self):
         return self.person.first_name + ' ' + self.person.last_name + ' : ' + self.operator.company.common_name

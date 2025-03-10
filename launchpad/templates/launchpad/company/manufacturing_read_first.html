@@ -1,23 +1,24 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %} 
 {% load rest_framework %}
 {% load static %}
 {% block content %}
 <div class="row mb-3">
-    <h2>Get started with Assembly / Manufacturing</h2>
-    <p>Aerobridge gives you the ability manage assembly and manufacturing of drone and its components with a four step process</p><br><br>
+    <h2>{% trans "Get started with Assembly / Manufacturing" %}</h2>
+    <p>{% trans "Aerobridge gives you the ability manage assembly and manufacturing of drone and its components with a four step process" %}</p><br><br>
 </div>
 <div class="row mb-3">
     <ol class="list-group list-group-numbered">
        
-        <li class="list-group-item">Start with adding master components, master components are the core building blocks that form the drone assembly.</li>
+        <li class="list-group-item">{% trans "Start with adding master components, master components are the core building blocks that form the drone assembly." %}</li>
         </li>
         <li class="list-group-item">
-            You can then create an Aircraft Model by linking master components to a Aircraft Model.
+            {% trans "You can then create an Aircraft Model by linking master components to a Aircraft Model." %}
         </li>
-        <li class="list-group-item">Once master components are added, you can acknowledge custody of components to add components to Aerobridge. 
+        <li class="list-group-item">{% trans "Once master components are added, you can acknowledge custody of components to add components to Aerobridge. " %}
         </li>
         <li class="list-group-item">
-            You can then create a Aircraft Assembly based on acknolwedged components.
+            {% trans "You can then create a Aircraft Assembly based on acknolwedged components." %}
         </li>
     </ol>
 </div>

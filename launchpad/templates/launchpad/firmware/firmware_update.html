@@ -1,19 +1,20 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
 <div class="alert alert-primary" role="alert">
-    <span class="bi bi-bell-fill"></span> You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations. 
+    <span class="bi bi-bell-fill"></span> {% trans "You are in the blueprints section of Aerobridge, make sure you read the instructions before proceeding. Changes here may cause disruptions in your manufacturing operations." %}
   </div>
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
-<h1>Firmware Details</h1>
+<h1>{% trans "Firmware Details" %}</h1>
 
 <form action="{% url 'firmwares-update' firmware_id=firmware.pk %}" method="POST">
     {% csrf_token %}
     {% render_form serializer %}
     <br>
-    <button class="btn btn-primary"  type="submit" value="Update">Update</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'firmwares-list' %}" role="button">Cancel</a>
+    <button class="btn btn-primary"  type="submit" value="Update">{% trans "Update" %}</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'firmwares-list' %}" role="button">{% trans "Cancel" %}</a>
 </form>
 
 </div>

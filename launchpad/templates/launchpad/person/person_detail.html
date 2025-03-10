@@ -1,9 +1,10 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
-<h2>Person Details</h2>
-<p>Details of person in Aerobridge, you can assign a person as a pilot, contact for a operator etc. </p>
+<h2>{% trans  "Person Details" %}</h2>
+<p>{% trans  "Details of person in Aerobridge, you can assign a person as a pilot, contact for a operator etc." %}</p>
 <br>
 
 <br>
@@ -16,25 +17,25 @@
     </thead>
 
     <tr>
-        <td>Social Security Number</td>
+        <td>{% trans  "Social Security Number" %}</td>
         <td>{{ person.social_security_number }}</td>    
     </tr>
     <tr>
-        <td>Full Name</td>
+        <td>{% trans  "Full Name" %}</td>
         <td><b>{{ person.first_name}} {{person.last_name}}</b></td>
     </tr>
     <tr>
-        <td>Email</td>
+        <td>{% trans  "Email" %}</td>
         <td>{{person.email}}</td>
     </tr>
     <tr>
-        <td>Phone Number</td>
+        <td>{% trans  "Phone Number" %}</td>
         <td>{{person.phone_number}}</td>
     </tr>
     
 </table>
 <br>
-<p><a class="btn btn-primary" href="/launchpad/people/{{person.id}}"><b>Update Details</b></a></p>
+<p><a class="btn btn-primary" href="/launchpad/people/{{person.id}}"><b>{% trans  "Update Details" %}</b></a></p>
 
 
 {% endblock %}

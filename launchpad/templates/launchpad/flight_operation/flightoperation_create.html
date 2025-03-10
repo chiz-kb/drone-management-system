@@ -1,4 +1,5 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 {% load crispy_forms_tags %}
@@ -6,13 +7,13 @@
     <div class="col-md-8 themed-grid-col">
 
 
-    <h2>Add new Flight Operation</h2>
-    <p>Create a new flight operation, link it to a flight plan and get permission artefacts against those operations</p>
+    <h2>{% trans "Add new Flight Operation" %}</h2>
+    <p>{% trans "Create a new flight operation, link it to a flight plan and get permission artefacts against those operations" %}</p>
     <form action="" method="post">
         {% csrf_token %}
         {% if form.errors %}
             {{ form|crispy }}    
-            <button type="submit" class="btn btn-primary">+ Add Operation</button>&nbsp;<a class="btn btn-secondary" href="{% url 'flightoperations-list' %}" role="button">Cancel</a>
+            <button type="submit" class="btn btn-primary">+ {% trans "Add Operation" %}</button>&nbsp;<a class="btn btn-secondary" href="{% url 'flightoperations-list' %}" role="button">Cancel</a>
         {% else %}
             {% crispy form %}
         {% endif %}

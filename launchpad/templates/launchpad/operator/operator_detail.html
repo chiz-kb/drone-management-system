@@ -1,13 +1,14 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %}
 {% load rest_framework %}
 {% block content %}
 
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
-<h1>Operator Profile</h1>
+<h1>{% trans "Operator Profile" %}</h1>
 <br>
 <h4>{{ operator.company.full_name }}</h4>
-<p>A snapshot for this operator, a Operator is a company that flies / operates the drone</p>
+<p>{% trans "A snapshot for this operator, a Operator is a company that flies / operates the drone" %}</p>
 <br>
 
 <table  class="table">
@@ -19,34 +20,34 @@
     </thead>
     
     <tr>
-        <td>Company Name</td>
+        <td>{% trans "Company Name" %}</td>
         <td>{{ operator.company.full_name}}</td>    
     </tr>
     <tr>
-        <td>Website</td>
+        <td>{% trans "Website" %}</td>
         <td><a href="{{ operator.company.website}}">{{ operator.company.website}}</a></td>
     </tr>
     <tr>
-        <td>VAT Number</td>
+        <td>{% trans "VAT Number" %}</td>
         <td>{{ operator.company.vat_number}}</td>
     </tr>    
     <tr>
-        <td>Insurance Number</td>
+        <td>{% trans "Insurance Number" %}</td>
         <td>{{operator.company.company_number}}</td>
     </tr>
     <tr>
-        <td>Authorizations</td>
+        <td>{% trans "Authorizations" %}</td>
         <td>  {% for authorization in operator.operational_authorizations.all %} {{authorization.title}}  {% empty %}No Authorizations!{% endfor %}</td>
     </tr>
     
     <tr>
-        <td>Authorized Activities</td>
+        <td>{% trans "Authorized Activities" %}</td>
         <td>{% for activity in operator.authorized_activities.all %} {{activity.name}}  {% empty %}No Activities!{% endfor %}</td>
     </tr>
 
 </table>
 <br>
-<p><a class="btn btn-primary" href="/launchpad/operators/{{operator.id}}"><b>Update Details</b></a></p>
+<p><a class="btn btn-primary" href="/launchpad/operators/{{operator.id}}"><b>{% trans "Update Details" %}</b></a></p>
 
     </div>
     </div>

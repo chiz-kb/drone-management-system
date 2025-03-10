@@ -1,11 +1,12 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
-    <h2>Add new contact</h2>
-    <p>A Contact is the legal point of contact with a operators, normally it is the operator's company director or other legal persons. Use the form below to update / assign contacts for your operators.</p>
+    <h2>{% trans "Add new contact" %}</h2>
+    <p>{% trans "A Contact is the legal point of contact with a operators, normally it is the operator's company director or other legal persons. Use the form below to update / assign contacts for your operators." %}</p>
     <form action="" method="post">
         {% csrf_token %}
         {% if form.errors %}

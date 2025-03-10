@@ -1,10 +1,11 @@
 {% extends "launchpad/layout.html" %}
+{% load i18n %}
 {% block content %}
 
 <div class="row mb-3">
 
-    <h2>Flight Permissions</h2>
-    <p>Below are a list of flight permission objects that dont have a associated permission artefact. If you are looking to download a permission artefact, use the use the <a href="/launchpad/flightpermissions">Flight Permissions</a> menu.  For a step-by-step review of the flow, please review the <a href="/launchpad/flight-permissions-read-first">README</a></p>
+    <h2> {% trans "Flight Permissions" %}</h2>
+    <p> {% trans "Below are a list of flight permission objects that dont have a associated permission artefact. If you are looking to download a permission artefact, use the use the" %} <a href="/launchpad/flightpermissions"> {% trans "Flight Permissions" %}</a>  {% trans "menu.  For a step-by-step review of the flow, please review the" %} <a href="/launchpad/flightpermissions-read-first">README</a></p>
 
     <div class="row mb-3">
         <div class="col-md-8 themed-grid-col">
@@ -15,7 +16,7 @@
                             href="/launchpad/digitalsky-flight-permissions/{{flightpermission.id}}/request">{{ flightpermission.operation.name }}</a>&nbsp;&nbsp;<small class="text-muted">&mdash; Created at {{ flightpermission.created_at|date:'Y-m-d H:i' }} </small></li>
                     {% endfor %}
             {% else %}
-                <li class="list-group-item"><p class="text-muted"><i>There are no flight permissions added in Aerobridge, once added the list of flight permissions will be displayed here.</i></p></li>
+                <li class="list-group-item"><p class="text-muted"><i> {% trans "There are no flight permissions added in Aerobridge, once added the list of flight permissions will be displayed here." %}</i></p></li>
             {% endif %}
     
             </ul><br>

@@ -1,5 +1,6 @@
+{% load i18n %}
 <!DOCTYPE html>
-{% load static %}{% load i18n %}
+{% load static %}
 
 <html lang="en">
 
@@ -41,14 +42,14 @@
     <meta name="description" content="My description">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Aerobridge.io</title>
+    <title>{% trans "Ethiopian Civil Aviation" %}</title>
 </head>
 
 <body>
 
         <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4" aria-label="Aerobridge.io">
             <div class="container-fluid">
-                <a class="navbar-brand" href="/launchpad">Aerobridge Drones Ltd.</a>
+                <a class="navbar-brand" href="/launchpad">{% trans "Ethiopian Civil Aviation Authority" %}</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#aerobridge_navigation" aria-controls="aerobridge_navigation" aria-expanded="false"
                     aria-label="Toggle navigation">
@@ -58,85 +59,112 @@
                 <div class="collapse navbar-collapse" id="aerobridge_navigation">
                     <ul class="nav nav-pills">
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="operator_dd" href="#">Operations</a>
+                                aria-expanded="false" id="operator_dd" href="#">{% trans "Operations" %}</a>
                             <ul class="dropdown-menu" aria-labelledby="operator_dd">
-                                <li><a class="dropdown-item" href="/launchpad/companies">Companies</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/companies">{% trans "Companies" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>              
-                                <li><a class="dropdown-item" href="/launchpad/people">People</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/addresses">Addresses</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/people">{% trans "People" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/addresses">{% trans "Addresses" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>              
-                                <li><a class="dropdown-item" href="/launchpad/operators">Operators</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/contacts">Contacts</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/pilots">Pilots</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/operators">{% trans "Operators" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/contacts">{% trans "Contacts" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/pilots">{% trans "Pilots" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>              
-                                <li><a class="dropdown-item" href="/launchpad/activities">Activities</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/authorizations">Authorizations</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/activities">{% trans "Activities" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/authorizations">{% trans "Authorizations" %}</a></li>
                             </ul>
                         </li>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false" id="plans_operations_dd" href="#">Trusted Flights</a>
+                                aria-expanded="false" id="plans_operations_dd" href="#">{% trans "Trusted Flights" %}</a>
                             <ul class="dropdown-menu" aria-labelledby="plans_operations_dd">
-                                <li><a class="dropdown-item" href="/launchpad/flightpermissions-read-first">Read first</a>
+                                <li><a class="dropdown-item" href="/launchpad/flightpermissions-read-first">{% trans "Read first" %}</a>
                                 </li>
                                 <li><hr class="dropdown-divider"></li>                                
                                 
-                                <li><a class="dropdown-item" href="/launchpad/aircrafts">Aircraft</a></li>  
-                                <li><a class="dropdown-item" href="/launchpad/incidents">Incident Reports</a></li>    
+                                <li><a class="dropdown-item" href="/launchpad/aircrafts">{% trans "Aircraft" %}</a></li>  
+                                <li><a class="dropdown-item" href="/launchpad/incidents">{% trans "Incident Reports" %}</a></li>    
                                 <!-- <li><a class="dropdown-item" href="/launchpad/aircraft-components">Assembly</a></li> -->
                                 <li><hr class="dropdown-divider"></li>
-                                <li><small class="dropdown-header">Pre Flight</small></li>
-                                <li><a class="dropdown-item" href="/launchpad/flightplans">Plans</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/flightoperations">Operations</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/flightpermissions">Permissions</a></li>
+                                <li><small class="dropdown-header">{% trans "Pre Flight" %}</small></li>
+                                <li><a class="dropdown-item" href="/launchpad/flightplans">{% trans "Plans" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/flightoperations">{% trans "Operations" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/flightpermissions">{% trans "Permissions" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>     
-                                <li><small class="dropdown-header">Post Flight</small></li>
-                                <li><a class="dropdown-item" href="/launchpad/flightlogs">Flight Logs</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/signed-flightlogs">Signed Flight Logs</a></li>
+                                <li><small class="dropdown-header">{% trans "Post Flight" %}</small></li>
+                                <li><a class="dropdown-item" href="/launchpad/flightlogs">{% trans "Flight Logs" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/signed-flightlogs">{% trans "Signed Flight Logs" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><small class="dropdown-header">Communication</small></li>
-                                <li><a class="dropdown-item" href="https://github.com/openskies-sh/mavlink-aerobridge/tree/master/mavsdk-aerobridge">Aerobridge Mavlink</a></li>
+                                <li><small class="dropdown-header">{% trans "Communication" %}</small></li>
+                                <li><a class="dropdown-item" href="https://github.com/openskies-sh/mavlink-aerobridge/tree/master/mavsdk-aerobridge">{% trans "Aerobridge Mavlink" %}</a></li>
                                 
                             </ul>
                         </li>
                     
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false" href="#" id="credentials_dd">Data Locker</a>
+                                aria-expanded="false" href="#" id="credentials_dd">{% trans "Data Locker" %}</a>
                             <ul class="dropdown-menu" aria-labelledby="credentials_dd">
-                                <li><a class="dropdown-item" href="/launchpad/credentials-read-first">Read First</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/credentials-read-first">{% trans "Read First" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><a class="dropdown-item" href="/launchpad/credentials">Credentials Manager</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/cloud-files">Files Manager</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/credentials">{% trans "Credentials Manager" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/cloud-files">{% trans "Files Manager" %}</a></li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
-                                aria-expanded="false" href="#" id="manufacturing_dd">Manufacturing</a>
+                                aria-expanded="false" href="#" id="manufacturing_dd">{% trans "Manufacturing" %}</a>
                             <ul class="dropdown-menu" aria-labelledby="manufacturing_dd">
-                                <li><a class="dropdown-item" href="/launchpad/manufacturing-read-first">Read first</a>
+                                <li><a class="dropdown-item" href="/launchpad/manufacturing-read-first">{% trans "Read first" %}</a>
                                 </li>                                
                                 
                                 <li><hr class="dropdown-divider"></li>
-                                <li><h6 class="dropdown-header">Building Blocks</h6></li>
-                                <li><a class="dropdown-item" href="/launchpad/aircraft-master-components">Master Components</a></li>
-                                <li><a class="dropdown-item" href="/launchpad/stock-keeping">Stock Keeping</a></li>
+                                <li><h6 class="dropdown-header">{% trans "Building Blocks" %}</h6></li>
+                                <li><a class="dropdown-item" href="/launchpad/aircraft-master-components">{% trans "Master Components" %}</a></li>
+                                <li><a class="dropdown-item" href="/launchpad/stock-keeping">{% trans "Stock Keeping" %}</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <li><h6 class="dropdown-header">Assemblies</h6></li>
-                                <li><a class="dropdown-item" href="/launchpad/aircraft-models">Models & Assemblies</a></li>
+                                <li><h6 class="dropdown-header">{% trans "Assemblies" %}</h6></li>
+                                <li><a class="dropdown-item" href="/launchpad/aircraft-models">{% trans "Models & Assemblies" %}</a></li>
                                 <!-- <li><a class="dropdown-item" href="/launchpad/aircraft-assemblies">Assemblies</a></li> -->
                                 <!-- <li><a class="dropdown-item" href="/launchpad/inventories">Inventory</a></li> -->
                                 <!-- <li><a class="dropdown-item" href="/launchpad/aircraft-master-components">BOM</a></li> -->
                                 <li><hr class="dropdown-divider"></li>
-                                <li><small class="dropdown-header">Software</small></li>
-                                <li><a class="dropdown-item" href="/launchpad/firmwares">Firmware</a></li>   
+                                <li><small class="dropdown-header">{% trans "Software" %}</small></li>
+                                <li><a class="dropdown-item" href="/launchpad/firmwares">{% trans "Firmware" %}</a></li>   
                                 <li><hr class="dropdown-divider"></li>                                
-                                <li><a class="dropdown-item" href="/launchpad/aircraft-components/verify">Verify Components</a></li>   
+                                <li><a class="dropdown-item" href="/launchpad/aircraft-components/verify">{% trans "Verify Components" %}</a></li>   
                             </ul>
                         </li>
+                        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false" href="#" id="credentials_dd">{% trans "Language" %}</a>
+                        <ul class="dropdown-menu" aria-labelledby="credentials_dd">
+                            <li><a class="dropdown-item" href="{% url 'set-language' 'am' %}">አማርኛ</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="{% url 'set-language' 'en' %}">English</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                    <div style="position: absolute;
+                    right: 0;
+                    width: 100px;
+                    height: 120px;">
+                <a href="{% url 'logout' %}">{% trans "Logout" %}</a>
+            </div>
+                    </li>
+        
                     </ul>
                 </div>
             </div>
+            
         </nav>
-        
+<div style="position: absolute;
+right: 0;
+width: 100px;
+height: 120px;">
+    <a href="{% url 'set-language' 'am' %}">AM</a>
+    <a href="{% url 'set-language' 'en' %}">EN</a>
+</div>
+       
+
         <div class="container">
 
 
@@ -150,9 +178,9 @@
                 {% endblock %}
             
 
-            <footer class="pt-5 my-5 text-muted border-top">
-                <p>Get Aerobridge for your company! Contact us via <a href="https://about.openskies.sh/#contact">our homepage</a></p>
-            </footer>
+             <footer class="pt-5 my-5 text-muted border-top">
+                <p>{% trans "For more information visit" %} <a href="http://www.ecaa.gov.et/home/">{% trans "our homepage" %}</a></p>
+            </footer> 
         </div>
         <script src="{% static "jetway/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
 

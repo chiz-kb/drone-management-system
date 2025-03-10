@@ -1,0 +1,2206 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-04-10 23:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+#: .\aerobridge\settings.py:182
+msgid "English"
+msgstr ""
+
+#: .\aerobridge\settings.py:183
+msgid "Amharic"
+msgstr ""
+
+#: .\common\status_codes.py:102 .\common\status_codes.py:143
+#: .\common\status_codes.py:319
+msgid "Pending"
+msgstr ""
+
+#: .\common\status_codes.py:103
+msgid "Placed"
+msgstr ""
+
+#: .\common\status_codes.py:104 .\common\status_codes.py:322
+#: .\registry\models.py:1317
+msgid "Complete"
+msgstr ""
+
+#: .\common\status_codes.py:105 .\common\status_codes.py:145
+#: .\common\status_codes.py:321
+msgid "Cancelled"
+msgstr ""
+
+#: .\common\status_codes.py:106 .\common\status_codes.py:146
+#: .\common\status_codes.py:188
+msgid "Lost"
+msgstr ""
+
+#: .\common\status_codes.py:107 .\common\status_codes.py:147
+#: .\common\status_codes.py:190
+msgid "Returned"
+msgstr ""
+
+#: .\common\status_codes.py:144
+msgid "Shipped"
+msgstr ""
+
+#: .\common\status_codes.py:184
+msgid "OK"
+msgstr ""
+
+#: .\common\status_codes.py:185
+msgid "Attention needed"
+msgstr ""
+
+#: .\common\status_codes.py:186
+msgid "Damaged"
+msgstr ""
+
+#: .\common\status_codes.py:187
+msgid "Destroyed"
+msgstr ""
+
+#: .\common\status_codes.py:189
+msgid "Rejected"
+msgstr ""
+
+#: .\common\status_codes.py:274
+msgid "Legacy stock tracking entry"
+msgstr ""
+
+#: .\common\status_codes.py:276
+msgid "Stock item created"
+msgstr ""
+
+#: .\common\status_codes.py:278
+msgid "Edited stock item"
+msgstr ""
+
+#: .\common\status_codes.py:279
+msgid "Assigned serial number"
+msgstr ""
+
+#: .\common\status_codes.py:281
+msgid "Stock counted"
+msgstr ""
+
+#: .\common\status_codes.py:282
+msgid "Stock manually added"
+msgstr ""
+
+#: .\common\status_codes.py:283
+msgid "Stock manually removed"
+msgstr ""
+
+#: .\common\status_codes.py:285
+msgid "Location changed"
+msgstr ""
+
+#: .\common\status_codes.py:287
+msgid "Installed into assembly"
+msgstr ""
+
+#: .\common\status_codes.py:288
+msgid "Removed from assembly"
+msgstr ""
+
+#: .\common\status_codes.py:290
+msgid "Installed component item"
+msgstr ""
+
+#: .\common\status_codes.py:291
+msgid "Removed component item"
+msgstr ""
+
+#: .\common\status_codes.py:293
+msgid "Split from parent item"
+msgstr ""
+
+#: .\common\status_codes.py:294
+msgid "Split child item"
+msgstr ""
+
+#: .\common\status_codes.py:296
+msgid "Merged stock items"
+msgstr ""
+
+#: .\common\status_codes.py:298
+msgid "Sent to customer"
+msgstr ""
+
+#: .\common\status_codes.py:299
+msgid "Returned from customer"
+msgstr ""
+
+#: .\common\status_codes.py:301
+msgid "Build order output created"
+msgstr ""
+
+#: .\common\status_codes.py:302
+msgid "Build order output completed"
+msgstr ""
+
+#: .\common\status_codes.py:303
+msgid "Consumed by build order"
+msgstr ""
+
+#: .\common\status_codes.py:305
+msgid "Received against purchase order"
+msgstr ""
+
+#: .\common\status_codes.py:320
+msgid "Production"
+msgstr ""
+
+#: .\common\validators.py:13
+msgid "Not a valid currency code"
+msgstr ""
+
+#: .\gcs_operations\models.py:33
+msgid "VLOS"
+msgstr ""
+
+#: .\gcs_operations\models.py:33
+msgid "BVLOS"
+msgstr ""
+
+#: .\jetway\templates\rest_framework\api.html:6
+msgid "Aerobridge Management Server"
+msgstr ""
+
+#: .\launchpad\forms.py:21
+msgid "DIGITAL SKY OPERATOR"
+msgstr ""
+
+#: .\launchpad\forms.py:21
+msgid "DIGITAL SKY MANUFACTURER"
+msgstr ""
+
+#: .\launchpad\forms.py:21
+msgid "DIGITAL SKY PILOT"
+msgstr ""
+
+#: .\launchpad\forms.py:21 .\pki_framework\forms.py:7
+#: .\pki_framework\models.py:15
+msgid "RFM"
+msgstr ""
+
+#: .\launchpad\forms.py:21 .\launchpad\forms.py:22 .\pki_framework\forms.py:9
+msgid "OTHER"
+msgstr ""
+
+#: .\launchpad\forms.py:22 .\pki_framework\forms.py:9
+msgid "PUBLIC_KEY"
+msgstr ""
+
+#: .\launchpad\forms.py:22 .\pki_framework\forms.py:9
+msgid "PRIVATE_KEY"
+msgstr ""
+
+#: .\launchpad\forms.py:22 .\pki_framework\forms.py:9
+msgid "AUTHENTICATION TOKEN"
+msgstr ""
+
+#: .\launchpad\forms.py:22
+msgid "RFM KEY"
+msgstr ""
+
+#: .\launchpad\forms.py:317
+#, python-format
+msgid ""
+"All components from the blueprint must be selected to complete a assembly. "
+"if a component is missing please select it or order it to add to the "
+"inventory. Following components are missing: %s"
+msgstr ""
+
+#: .\launchpad\forms.py:709
+#, python-format
+msgid "Not a valid GeoJSON, please enter a valid GeoJSON object %s "
+msgstr ""
+
+#: .\launchpad\forms.py:713
+#, python-format
+msgid "Not a valid GeoJSON, please enter a valid GeoJSON object %s"
+msgstr ""
+
+#: .\launchpad\forms.py:715
+msgid "Valid GeoJSON not provided"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_create.html:9
+msgid "Create a new activity"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_create.html:10
+msgid ""
+"Create a new activity in the database, you can then assign to the operator "
+"and flight plan"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_detail.html:17
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:37
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:17
+msgid "Name"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_detail.html:21
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:29
+msgid "Type"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_list.html:7
+#: .\launchpad\templates\launchpad\address\address_detail.html:8
+#: .\launchpad\templates\launchpad\address\address_list.html:7
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:7
+#: .\launchpad\templates\launchpad\company\company_detail.html:9
+#: .\launchpad\templates\launchpad\company\company_list.html:7
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:9
+#: .\launchpad\templates\launchpad\contact\contact_list.html:7
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:10
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:7
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:7
+#: .\launchpad\templates\launchpad\layout.html:62
+#: .\launchpad\templates\launchpad\layout.html:91
+#: .\launchpad\templates\launchpad\operator\operator_list.html:7
+#: .\launchpad\templates\launchpad\person\person_list.html:7
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:9
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:7
+msgid "Operations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_list.html:10
+#: .\launchpad\templates\launchpad\activity\activity_list.html:20
+#: .\launchpad\templates\launchpad\layout.html:73
+msgid "Activities"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_list.html:21
+msgid ""
+"A list of all activities in the system, you can assign them to operators"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_list.html:32
+msgid ""
+"There are no activites added in Aerobridge, once added the list of "
+"activities will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_list.html:37
+msgid "Add an activity"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\activity\activity_update.html:24
+#: .\launchpad\templates\launchpad\address\address_detail.html:24
+#: .\launchpad\templates\launchpad\company\company_update.html:19
+#: .\launchpad\templates\launchpad\contact\contact_update.html:25
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_update.html:23
+#: .\launchpad\templates\launchpad\incidents\incident_update.html:23
+#: .\launchpad\templates\launchpad\operator\operator_update.html:23
+#: .\launchpad\templates\launchpad\person\person_update.html:24
+#: .\launchpad\templates\launchpad\pilot\pilot_update.html:23
+msgid "Update"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_create.html:8
+msgid "Create a new address"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_create.html:9
+msgid ""
+"Create a new address in the database, you can then assign to the operator, "
+"pilots, manufacturers etc."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_detail.html:11
+#: .\launchpad\templates\launchpad\address\address_list.html:10
+#: .\launchpad\templates\launchpad\address\address_list.html:20
+#: .\launchpad\templates\launchpad\layout.html:67
+msgid "Addresses"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_detail.html:16
+msgid "Update Address"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_list.html:21
+msgid ""
+"A list of all addresses in the system, you can assign them to people, "
+"operators, manufacturers people can be assigned to Operators, Manufacturers, "
+"Tokens."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_list.html:32
+msgid ""
+"There are no Addresses added in Aerobridge, once added the list of addresses "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\address\address_list.html:38
+msgid "Add a address"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_components.html:9
+msgid "Equipment"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_components.html:12
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:12
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:23
+msgid "Aircraft Assembly Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_components.html:18
+msgid "Assembly for"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_create.html:9
+msgid "Add a new Aircraft"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_create.html:10
+msgid ""
+"Create a new drone in the database, you can add details about the drone and "
+"its Flight module. You will need to get the flight module number following"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_create.html:10
+msgid "these instructions"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:8
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:7
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:7
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:9
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_list.html:7
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:7
+#: .\launchpad\templates\launchpad\layout.html:79
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_list.html:7
+msgid "Trusted Flights"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:11
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:10
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:20
+msgid "Aircrafts"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:28
+msgid "Drone Status"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:34
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:33
+#: .\pki_framework\models.py:15 .\registry\models.py:193
+msgid "Operator"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:38
+msgid "Friendly Name"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:42
+msgid "Flight Controller Number (Drone ID)"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:46
+#: .\pki_framework\models.py:15 .\registry\models.py:193
+#: .\registry\models.py:447 .\registry\models.py:950
+msgid "Manufacturer"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:50
+#: .\registry\models.py:471
+msgid "Assembly"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:56
+#: .\launchpad\templates\launchpad\company\company_detail.html:46
+msgid "Last Updated at"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_detail.html:58
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:47
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:50
+#: .\launchpad\templates\launchpad\person\person_detail.html:38
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:48
+msgid "Update Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:21
+msgid ""
+"A list of all aircrafts owned and operated by the company, as you buy new "
+"aircraft, you can use this form to maintain a database of the equipment, "
+"decomission it, change engines etc."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:29
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:8
+#: .\launchpad\templates\launchpad\layout.html:85
+msgid "Aircraft"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:30
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:44
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:35
+msgid "Status"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:31
+msgid "Assembly Status"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:33
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:16
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:10
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:10
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:18
+msgid "Incidents"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:42
+msgid "Report an incident"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft\aircraft_list.html:47
+msgid ""
+"There are no aircrafts added in Aerobridge, once added the list of aircrafts "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:9
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:7
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_list.html:7
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_model_components.html:8
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:10
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:7
+#: .\launchpad\templates\launchpad\layout.html:114
+msgid "Manufacturing"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:20
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:19
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:16
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_list.html:19
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_model_components.html:21
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_create.html:6
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:23
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:18
+msgid ""
+"You are in the blueprints section of Aerobridge, make sure you read the "
+"instructions before proceeding. Changes here may cause disruptions in your "
+"manufacturing operations."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:23
+msgid "Assembly Detail"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:56
+msgid "Assembled Components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:57
+msgid ""
+"Following are the components installed in this assembly, click on the "
+"components to update them."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_detail.html:64
+msgid ""
+"You have not added any aircraft assembly details in Aerobridge, once added "
+"the list of the assembly will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:10
+msgid "Aircraft Assembiles"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:24
+msgid "A list of currently active assemblies, you can also see "
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:24
+msgid "all"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_assembly\aircraft_assembly_list.html:24
+msgid "complete assemblies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:11
+msgid "Aircraft Component Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:19
+msgid "Component Detail"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:32
+#: .\registry\models.py:1220
+msgid "Master Component"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_detail.html:40
+msgid "History"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_list.html:10
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_list.html:23
+msgid "Aircraft Components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_component\aircraft_components_list.html:24
+msgid ""
+"A list of all the components per your query, a component can be linked to an "
+"aircraft. You may also want to look at"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_model_components.html:11
+msgid "Aircraft Blueprint"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_model_components.html:26
+msgid "Below is a list of master components for the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_create.html:12
+msgid "Add a new model"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_create.html:13
+msgid "Create a new model of aircraft to manufacture / assemble."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:13
+msgid "Aircraft Model Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:26
+msgid "Aircraft Model"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:27
+msgid ""
+"Basic information about your aircraft, you can explore the master components "
+"and attach documentation associated with this aricraft."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:41
+msgid "Series"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:45
+msgid "Popular name"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:49
+#: .\launchpad\templates\launchpad\layout.html:131
+msgid "Firmware"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:53
+msgid "Maximum endurance (mins)"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:57
+msgid "Maximum range (kms)"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:61
+msgid "Maximum speed (km / hr)"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:65
+msgid "Dimensions (mm)"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:76
+msgid "Blueprint"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:77
+msgid ""
+"Below is a list of components that form the Bill of Material for the "
+"aircraft, see all"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:77
+msgid "master components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_detail.html:85
+msgid ""
+"You have not added any components, once added the list of the components "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:10
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:22
+msgid "Aircraft Models"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:23
+msgid ""
+"A list of all the aircraft models built / assembled by the company, a model "
+"will have a associated list of master components that forms the Blueprint. "
+"See "
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:23
+msgid "existing assemblies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:33
+msgid ""
+"You have not added any models to assemble / manufacture, once added the list "
+"of the models will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\aircraft_model\aircraft_models_list.html:41
+msgid "Add new Aircraft Model or Series"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_create.html:9
+msgid "Create a new authorization"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_create.html:10
+msgid ""
+"Create a new authorization in the database, you can then assign to the "
+"operator and flight plan"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:6
+msgid "Authorization Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:21
+msgid "Operation Max Height"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:25
+msgid "Operation Altitude system"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:29
+msgid "Airspace Type"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:34
+msgid "Risk Type"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_detail.html:40
+msgid "Authorization Type"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:10
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:20
+#: .\launchpad\templates\launchpad\layout.html:74
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:39
+msgid "Authorizations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:21
+msgid ""
+"A list of all authorizations in the system, you can assign them to operators"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:32
+msgid ""
+"There are no authorizations added in Aerobridge, once added the list of "
+"authorizations will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\authorization\authorization_list.html:37
+msgid "Add an authorization"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:7
+msgid "Ethiopian Civil Aviation Launchpad"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:14
+msgid "Our Vision:"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:15
+msgid "Building internationally competent and secured civil aviation by 2025."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:16
+msgid "Our Mission:"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:17
+msgid ""
+"To enable the public get access to reliable Air transport service by "
+"ensuring Aviation safety and security through effective regulatory function, "
+"environmental protection, provision of Air navigation services, by "
+"strengthening global cooperation and partnership."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:18
+msgid "The objective of the Authority shall be:"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:20
+msgid ""
+"To promote and maintain an efficient and economical civil air service and"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:21
+msgid ""
+"General aviation service system and to ensure the provision of highly secure "
+"and safe air service;"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:22
+msgid ""
+"To develop domestic and international air transportation networks and to "
+"ensure a reliable and sustainable air transport system;"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:23
+msgid ""
+"To implement and enforce laws, regulations and directives relating to civil "
+"aviation as well as reaties to which Ethiopia is a party."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:25
+msgid "Our Value:"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:27
+msgid "Safety First"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:28
+msgid "Team Work"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:29
+msgid "Think Globally Act Locally"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:30
+msgid "Committed to Excellence"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:31
+msgid "Our Efforts our Achievement"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\basecamp.html:37
+msgid "Air Operator Certification and Administration"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_create.html:9
+#: .\launchpad\templates\launchpad\company\company_list.html:37
+msgid "Add a Company"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_create.html:10
+msgid ""
+"Create a new company in the database, you can then assign them to an "
+"Aircraft, Firmware etc. Some fields are mandatory and some are optional"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_detail.html:12
+msgid "Company Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_detail.html:29
+msgid "ID"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_detail.html:33
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:23
+msgid "Company Name"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_detail.html:37
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:41
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:42
+msgid "Address"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_detail.html:42
+msgid "Role"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_list.html:10
+msgid "All Companies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_list.html:20
+#: .\launchpad\templates\launchpad\layout.html:64
+msgid "Companies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_list.html:21
+msgid "A list of all companies, their manufactured and / or supplied parts."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\company_update.html:19
+#: .\launchpad\templates\launchpad\incidents\incident_update.html:23
+msgid "Cancel"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:7
+msgid "Get started with Assembly / Manufacturing"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:8
+msgid ""
+"Aerobridge gives you the ability manage assembly and manufacturing of drone "
+"and its components with a four step process"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:13
+msgid ""
+"Start with adding master components, master components are the core building "
+"blocks that form the drone assembly."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:16
+msgid ""
+"You can then create an Aircraft Model by linking master components to a "
+"Aircraft Model."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:18
+msgid ""
+"Once master components are added, you can acknowledge custody of components "
+"to add components to Aerobridge. "
+msgstr ""
+
+#: .\launchpad\templates\launchpad\company\manufacturing_read_first.html:21
+msgid ""
+"You can then create a Aircraft Assembly based on acknolwedged components."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_create.html:8
+msgid "Add new contact"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_create.html:9
+msgid ""
+"A Contact is the legal point of contact with a operators, normally it is the "
+"operator's company director or other legal persons. Use the form below to "
+"update / assign contacts for your operators."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:12
+#: .\launchpad\templates\launchpad\contact\contact_list.html:10
+#: .\launchpad\templates\launchpad\layout.html:70
+msgid "Contacts"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:17
+#: .\launchpad\templates\launchpad\pilot\pilot_update.html:8
+msgid "Contact Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_detail.html:37
+#: .\launchpad\templates\launchpad\person\person_detail.html:24
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:38
+msgid "Full Name"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_list.html:18
+msgid "Contacts list"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_list.html:19
+msgid "See all the legal contacts for your operators as a list below"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_list.html:30
+msgid ""
+"There are no contacts added in Aerobridge, once added the list of contacts "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_list.html:35
+msgid "Add a new Contact"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_update.html:8
+msgid "Contact Update"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\contact\contact_update.html:9
+msgid ""
+"Update the details of your contacts, assign them to operators or change "
+"their role"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credential_list.html:7
+#: .\launchpad\templates\launchpad\credential\credential_list.html:19
+msgid "Credentials"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credential_list.html:10
+msgid "All"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credential_list.html:20
+msgid ""
+"You can store credentials, keys for the drone, Digital Sky or other services "
+"here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credential_list.html:32
+msgid ""
+"There are no credentials added in Aerobridge, once added the list of "
+"credentials will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credential_list.html:75
+#: .\launchpad\templates\launchpad\credential\credentials_create.html:10
+msgid "Add a Credential"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_create.html:11
+msgid ""
+"Create a new credential in the database, credentials can be used to sign "
+"data, interact with other services."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:7
+msgid ""
+"Get started with Credentials</h2><p> Proceed cautiously, if you dont know "
+"what you are doing, Stop!"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:8
+msgid ""
+"While public key cryptography is a well documented area of computing, we "
+"assume that you know the basics and understand the risks associated with "
+"storing keys on a public facing server. If you dont, get a professional to "
+"review / understand the implications."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:8
+msgid ""
+"While Aerobridge stores the keys with simple security which should suffice "
+"for simpler non-production applications. For production use, we recommend "
+"using a system such as"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:12
+msgid "Create a public / private key for you any pilot / operator"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:13
+msgid "You can use a following commands to create a public / private key pair."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:21
+msgid ""
+"The above code will generate a public key in PEM format and a private key"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\credential\credentials_read_first.html:21
+msgid ""
+"These are confidential files and can then be stored in Aerobridge via the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_create.html:10
+msgid "Add new Flight Operation"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_create.html:16
+msgid "Add Operation"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:19
+msgid "Flight Operations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:30
+msgid ""
+"There are no flight operations added in Aerobridge, once added the list of "
+"flight operations will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:42
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:45
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:50
+msgid "Previous"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_list.html:72
+msgid "Add a new flight operation"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_permission_thanks.html:12
+msgid "Permission object generated"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_permission_thanks.html:14
+msgid ""
+"Your permission object has been issued, you can check Flights -> Permissions "
+"menu to see the permission details."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_update.html:6
+msgid "Flightoperation Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_operation\flightoperation_update.html:26
+msgid "The flight operation is not editable becuase the log has been signed."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_create.html:8
+msgid "Create a new Flight Permssion"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_create.html:9
+msgid ""
+"Create a new cryptographically signed flight permission object that can be "
+"downloaded in the GCS and loaded on to the drone."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:12
+msgid "Flight Permission Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:17
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_detail.html:6
+msgid "Permission Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:18
+msgid ""
+"Please find below the details of flight permission tokens provided by "
+"Aerobridge"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:30
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_detail.html:18
+msgid "Operation"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:42
+msgid "Permission Token"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_detail.html:48
+msgid "Permission Geocage"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_list.html:10
+#: .\launchpad\templates\launchpad\layout.html:92
+msgid "Permissions"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_list.html:19
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_list.html:7
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_list.html:8
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid "Flight Permissions"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_list.html:20
+msgid ""
+"See all the flight permission objects, if you do not see a permission for "
+"your operation, go to the operation detail and generate a permission."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission\flightpermission_list.html:35
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_list.html:19
+msgid ""
+"There are no flight permissions added in Aerobridge, once added the list of "
+"flight permissions will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_detail.html:7
+msgid ""
+"Please find below the details of flight permission artefacts applied "
+"downloaded from Digital Sky."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_detail.html:22
+msgid "Applied Successfully"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_detail.html:28
+msgid "Request Permission from Digital Sky"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_list.html:8
+msgid ""
+"Below are a list of flight permission objects that dont have a associated "
+"permission artefact. If you are looking to download a permission artefact, "
+"use the use the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_list.html:8
+msgid "menu.  For a step-by-step review of the flow, please review the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:7
+msgid "Permission Request submitted"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid ""
+"Your request for permission has been sent to DigitalSky. If you are looking "
+"to download a permission artefact, please use the use the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid " menu.  To see the response from the DigitalSky, you can review the"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid "DigitalSky Logs"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid "For a step-by-step review of the flow, please review the "
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_permission_digital_sky\flightpermission_digitalsky_thanks.html:8
+msgid "README"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_create.html:9
+msgid "Add new Flight plan"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_create.html:10
+msgid ""
+"Create a new flight plan, link it to a Operation and get permission "
+"artefacts against those operations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:10
+#: .\launchpad\templates\launchpad\layout.html:90
+msgid "Plans"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:20
+msgid "Flight Plan"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:21
+msgid ""
+"See all the flight plans in the system, click on any one to show details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:34
+msgid ""
+"There are no flight plans added in Aerobridge, once added the list of flight "
+"plans will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:64
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_list.html:69
+msgid "Next"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_update.html:6
+msgid "Update Flightplan Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\flight_plan\flightplan_update.html:26
+msgid "The flight plan is not editable becuase the log has been signed."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:13
+msgid "Opeations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:23
+msgid "Incidents Calendar"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:24
+msgid ""
+"See all the flight incidents in a calendar view, use the month controls to "
+"navigate and see past and future operations"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:29
+msgid "Previous Month"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_calendar.html:30
+msgid "Next Month"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_create.html:10
+msgid "Create a new Incident for"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_create.html:11
+msgid ""
+"Create a new incident report in the database, you can update the status of "
+"components via this form."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:20
+msgid "Incident Detail"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:32
+msgid "Impacted Aircraft"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:36
+msgid "Component Status"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:43
+msgid "Notes"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_detail.html:47
+msgid "Impacted Components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:19
+msgid "A list of all incidents as reported in Aerobridge or see them as a "
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:19
+msgid "calendar"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:29
+msgid ""
+"There are no incidents added in Aerobridge, once added a list of incidents "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_list.html:33
+msgid ""
+"To add an incident to this list, go to Trusted Flights -> Aircraft and "
+"report a incident from there"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\incidents\incident_update.html:8
+msgid "Update Incident Report"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:45
+msgid "Ethiopian Civil Aviation"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:52
+msgid "Ethiopian Civil Aviation Authority"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:66
+#: .\launchpad\templates\launchpad\person\person_list.html:10
+#: .\launchpad\templates\launchpad\person\person_list.html:22
+msgid "People"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:69
+#: .\launchpad\templates\launchpad\operator\operator_list.html:10
+#: .\launchpad\templates\launchpad\operator\operator_list.html:18
+msgid "Operators"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:71
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:12
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:10
+msgid "Pilots"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:81
+#: .\launchpad\templates\launchpad\layout.html:116
+msgid "Read first"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:86
+msgid "Incident Reports"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:89
+msgid "Pre Flight"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:94
+msgid "Post Flight"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:95
+msgid "Flight Logs"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:96
+msgid "Signed Flight Logs"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:98
+msgid "Communication"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:99
+msgid "Aerobridge Mavlink"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:105
+msgid "Data Locker"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:107
+msgid "Read First"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:109
+msgid "Credentials Manager"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:110
+msgid "Files Manager"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:120
+msgid "Building Blocks"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:121
+msgid "Master Components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:122
+msgid "Stock Keeping"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:124
+msgid "Assemblies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:125
+msgid "Models & Assemblies"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:130
+msgid "Software"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\layout.html:133
+msgid "Verify Components"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_create.html:10
+msgid "Create a Operator"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_create.html:11
+msgid ""
+"Create a new operator in the database, you can then assign them drones, "
+"pilots etc. after that."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:8
+msgid "Operator Profile"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:11
+msgid ""
+"A snapshot for this operator, a Operator is a company that flies / operates "
+"the drone"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:27
+msgid "Website"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:31
+msgid "VAT Number"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:35
+msgid "Insurance Number"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_detail.html:44
+msgid "Authorized Activities"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_list.html:19
+msgid ""
+"A list of all Operators on the server, click to see / change details of an "
+"individual operator. Depending on your circumstance, you should only have "
+"one operator. Operator in the context of UTM / U-Space has a very specific "
+"legal definition and is normally a company who operates a drone."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_list.html:29
+msgid ""
+"There are no operators added in Aerobridge, once added the list of operators "
+"will be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\operator\operator_list.html:33
+msgid "Add a operator"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_create.html:10
+msgid "Create a Person"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_create.html:11
+msgid ""
+"Create a new person in the database, you can then assign them a role e.g. "
+"pilot, contact etc. You can also assign a person to a token / contact."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_detail.html:6
+msgid "Person Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_detail.html:7
+msgid ""
+"Details of person in Aerobridge, you can assign a person as a pilot, contact "
+"for a operator etc."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_detail.html:20
+msgid "Social Security Number"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_detail.html:28
+msgid "Email"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_detail.html:32
+msgid "Phone Number"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_list.html:36
+msgid ""
+"There are no people added in Aerobridge, once added the list of people will "
+"be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\person\person_list.html:40
+msgid "Add a person"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_create.html:8
+msgid "Add new pilot"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_create.html:9
+msgid ""
+"A pilot can be assigned to a operator and details about the pilot are stored "
+"here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:17
+msgid "Pilot Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:30
+#: .\pki_framework\models.py:15
+msgid "Company"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_detail.html:34
+msgid "Photo URL"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:20
+msgid "Pilots list"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:21
+msgid ""
+"See all the pilots for your operators as a list below, click to show details "
+"or add a new pilot"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:33
+msgid ""
+"There are no pilots added in Aerobridge, once added the list of pilots will "
+"be displayed here."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\pilot\pilot_list.html:37
+msgid "Add a new pilot"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_detail.html:6
+msgid "Signed Flight Log Details"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_detail.html:18
+msgid "Raw Flight Log"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_detail.html:22
+msgid "Signed Flight Log"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_detail.html:26
+msgid "Signed by:"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_detail.html:32
+msgid ""
+"No signed flight log exists, please sign the log first via the GCS or the "
+"user interface."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_list.html:11
+msgid "Signed Logs"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_list.html:20
+msgid "Signed Flight Logs list"
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_list.html:21
+msgid ""
+"See the details of flight logs signed by the management server, to sign a "
+"log, go to Trusted Flights -> Upload Flight Logs."
+msgstr ""
+
+#: .\launchpad\templates\launchpad\signed_flight_log\signed_flightlog_list.html:33
+msgid ""
+"There are no signed flight logs in Aerobridge, once a log is signed a list "
+"of signed logs will be displayed here."
+msgstr ""
+
+#: .\pki_framework\forms.py:7
+msgid "OPERATOR"
+msgstr ""
+
+#: .\pki_framework\forms.py:7
+msgid "MANUFACTURER"
+msgstr ""
+
+#: .\pki_framework\forms.py:7
+msgid "PILOT"
+msgstr ""
+
+#: .\pki_framework\forms.py:7
+msgid "DSC / eMudra Token"
+msgstr ""
+
+#: .\pki_framework\forms.py:9
+msgid "DIGITAL_CERTIFICATE"
+msgstr ""
+
+#: .\pki_framework\models.py:15
+msgid "Pilot"
+msgstr ""
+
+#: .\pki_framework\models.py:15
+msgid "Management Server"
+msgstr ""
+
+#: .\pki_framework\models.py:16
+msgid "Public Key"
+msgstr ""
+
+#: .\pki_framework\models.py:16
+msgid "x509 Digital Certificate"
+msgstr ""
+
+#: .\pki_framework\models.py:16 .\registry\models.py:162
+#: .\registry\models.py:163 .\registry\models.py:358 .\registry\models.py:1142
+#: .\registry\models.py:1146
+msgid "Other"
+msgstr ""
+
+#: .\pki_framework\models.py:17
+msgid "other"
+msgstr ""
+
+#: .\pki_framework\models.py:17
+msgid "jwk"
+msgstr ""
+
+#: .\pki_framework\models.py:56
+msgid "Auth Server"
+msgstr ""
+
+#: .\pki_framework\models.py:57
+msgid "Full Chain"
+msgstr ""
+
+#: .\registry\models.py:77
+msgid "Andaman and Nicobar Islands"
+msgstr ""
+
+#: .\registry\models.py:77
+msgid "Andhra Pradesh"
+msgstr ""
+
+#: .\registry\models.py:77
+msgid "Arunachal Pradesh"
+msgstr ""
+
+#: .\registry\models.py:78
+msgid "Assam"
+msgstr ""
+
+#: .\registry\models.py:78
+msgid "Bihar"
+msgstr ""
+
+#: .\registry\models.py:78
+msgid "Chandigarh"
+msgstr ""
+
+#: .\registry\models.py:78
+msgid "Chhattisgarh"
+msgstr ""
+
+#: .\registry\models.py:79
+msgid "Dadra and Nagar Haveli"
+msgstr ""
+
+#: .\registry\models.py:79
+msgid "Daman and Diu"
+msgstr ""
+
+#: .\registry\models.py:79
+msgid "Delhi"
+msgstr ""
+
+#: .\registry\models.py:79
+msgid "Goa"
+msgstr ""
+
+#: .\registry\models.py:80
+msgid "Gujarat"
+msgstr ""
+
+#: .\registry\models.py:80
+msgid "Haryana"
+msgstr ""
+
+#: .\registry\models.py:80
+msgid "Himachal Pradesh"
+msgstr ""
+
+#: .\registry\models.py:80
+msgid "Jammu and Kashmir"
+msgstr ""
+
+#: .\registry\models.py:81
+msgid "Jharkhand"
+msgstr ""
+
+#: .\registry\models.py:81
+msgid "Karnataka"
+msgstr ""
+
+#: .\registry\models.py:81
+msgid "Kerala"
+msgstr ""
+
+#: .\registry\models.py:81
+msgid "Ladakh"
+msgstr ""
+
+#: .\registry\models.py:81
+msgid "Lakshadweep"
+msgstr ""
+
+#: .\registry\models.py:82
+msgid "Madhya Pradesh"
+msgstr ""
+
+#: .\registry\models.py:82
+msgid "Maharashtra"
+msgstr ""
+
+#: .\registry\models.py:82
+msgid "Manipur"
+msgstr ""
+
+#: .\registry\models.py:82
+msgid "Meghalaya"
+msgstr ""
+
+#: .\registry\models.py:83
+msgid "Mizoram"
+msgstr ""
+
+#: .\registry\models.py:83
+msgid "Nagaland"
+msgstr ""
+
+#: .\registry\models.py:83
+msgid "Odisha"
+msgstr ""
+
+#: .\registry\models.py:83
+msgid "Puducherry"
+msgstr ""
+
+#: .\registry\models.py:83
+msgid "Punjab"
+msgstr ""
+
+#: .\registry\models.py:84
+msgid "Rajasthan"
+msgstr ""
+
+#: .\registry\models.py:84
+msgid "Sikkim"
+msgstr ""
+
+#: .\registry\models.py:84
+msgid "Tamil Nadu"
+msgstr ""
+
+#: .\registry\models.py:84
+msgid "Telangana"
+msgstr ""
+
+#: .\registry\models.py:84
+msgid "Tripura"
+msgstr ""
+
+#: .\registry\models.py:85
+msgid "Uttar Pradesh"
+msgstr ""
+
+#: .\registry\models.py:85
+msgid "Uttarakhand"
+msgstr ""
+
+#: .\registry\models.py:85
+msgid "West Bengal"
+msgstr ""
+
+#: .\registry\models.py:91
+msgid "post code"
+msgstr ""
+
+#: .\registry\models.py:108 .\registry\models.py:126 .\registry\models.py:129
+#: .\registry\models.py:130 .\registry\models.py:330
+msgid "NA"
+msgstr ""
+
+#: .\registry\models.py:108
+msgid "Open"
+msgstr ""
+
+#: .\registry\models.py:108
+msgid "Specific"
+msgstr ""
+
+#: .\registry\models.py:124
+msgid "Unpopulated"
+msgstr ""
+
+#: .\registry\models.py:124
+msgid "Sparsely Populated"
+msgstr ""
+
+#: .\registry\models.py:124
+msgid "Densely Populated"
+msgstr ""
+
+#: .\registry\models.py:126
+msgid "SAIL 1"
+msgstr ""
+
+#: .\registry\models.py:126
+msgid "SAIL 2"
+msgstr ""
+
+#: .\registry\models.py:126
+msgid "SAIL 3"
+msgstr ""
+
+#: .\registry\models.py:126
+msgid "SAIL 4"
+msgstr ""
+
+#: .\registry\models.py:126
+msgid "SAIL 5"
+msgstr ""
+
+#: .\registry\models.py:127
+msgid "SAIL 6"
+msgstr ""
+
+#: .\registry\models.py:129
+msgid "Light UAS Operator Certificate"
+msgstr ""
+
+#: .\registry\models.py:129
+msgid "Standard Scenario Authorization"
+msgstr ""
+
+#: .\registry\models.py:130
+msgid "Green"
+msgstr ""
+
+#: .\registry\models.py:130
+msgid "Amber"
+msgstr ""
+
+#: .\registry\models.py:130
+msgid "Red"
+msgstr ""
+
+#: .\registry\models.py:131
+msgid "wgs84"
+msgstr ""
+
+#: .\registry\models.py:131
+msgid "amsl"
+msgstr ""
+
+#: .\registry\models.py:131
+msgid "agl"
+msgstr ""
+
+#: .\registry\models.py:131
+msgid "sps"
+msgstr ""
+
+#: .\registry\models.py:161
+msgid "Remote pilot online theoretical competency"
+msgstr ""
+
+#: .\registry\models.py:161
+msgid "Certificate of remote pilot competency"
+msgstr ""
+
+#: .\registry\models.py:163
+msgid "Online Test"
+msgstr ""
+
+#: .\registry\models.py:163
+msgid "In Authorized Test Center"
+msgstr ""
+
+#: .\registry\models.py:193 .\registry\models.py:1056
+msgid "Supplier"
+msgstr ""
+
+#: .\registry\models.py:193
+msgid "Customer"
+msgstr ""
+
+#: .\registry\models.py:193
+msgid "Assembler"
+msgstr ""
+
+#: .\registry\models.py:219
+msgid "Currency"
+msgstr ""
+
+#: .\registry\models.py:222
+msgid "Default currency used for this company"
+msgstr ""
+
+#: .\registry\models.py:330
+msgid "LUC"
+msgstr ""
+
+#: .\registry\models.py:330
+msgid "Non-LUC"
+msgstr ""
+
+#: .\registry\models.py:330
+msgid "AUTH"
+msgstr ""
+
+#: .\registry\models.py:330
+msgid "DEC"
+msgstr ""
+
+#: .\registry\models.py:358
+msgid "Responsible"
+msgstr ""
+
+#: .\registry\models.py:428
+msgid "Frame"
+msgstr ""
+
+#: .\registry\models.py:428
+msgid "Motors"
+msgstr ""
+
+#: .\registry\models.py:428
+msgid "Electronic Speed Controller"
+msgstr ""
+
+#: .\registry\models.py:428
+msgid "Flight Controller"
+msgstr ""
+
+#: .\registry\models.py:429
+msgid "Power Distribution Board"
+msgstr ""
+
+#: .\registry\models.py:429
+msgid "Battery"
+msgstr ""
+
+#: .\registry\models.py:429
+msgid "Propellors"
+msgstr ""
+
+#: .\registry\models.py:429
+msgid "Camera"
+msgstr ""
+
+#: .\registry\models.py:429 .\registry\models.py:431
+msgid "GPS"
+msgstr ""
+
+#: .\registry\models.py:430
+msgid "Battery Charger"
+msgstr ""
+
+#: .\registry\models.py:430
+msgid "Telemetry Link"
+msgstr ""
+
+#: .\registry\models.py:430
+msgid "Remote Controller"
+msgstr ""
+
+#: .\registry\models.py:430
+msgid "Landing Gear"
+msgstr ""
+
+#: .\registry\models.py:431
+msgid "Companion Computer"
+msgstr ""
+
+#: .\registry\models.py:448 .\registry\models.py:951
+msgid "Select manufacturer"
+msgstr ""
+
+#: .\registry\models.py:458
+msgid "Minimum Stock"
+msgstr ""
+
+#: .\registry\models.py:459
+msgid "Minimum allowed stock level"
+msgstr ""
+
+#: .\registry\models.py:465
+msgid "Units"
+msgstr ""
+
+#: .\registry\models.py:466
+msgid "Stock keeping units for this part"
+msgstr ""
+
+#: .\registry\models.py:472
+msgid "Is this component a part of an assembly?"
+msgstr ""
+
+#: .\registry\models.py:477
+msgid "Trackable"
+msgstr ""
+
+#: .\registry\models.py:478
+msgid "Does this part have tracking for unique items?"
+msgstr ""
+
+#: .\registry\models.py:482
+msgid "Purchaseable"
+msgstr ""
+
+#: .\registry\models.py:483
+msgid "Can this part be purchased from external suppliers?"
+msgstr ""
+
+#: .\registry\models.py:487
+msgid "Salable"
+msgstr ""
+
+#: .\registry\models.py:488
+msgid "Can this part be sold to customers?"
+msgstr ""
+
+#: .\registry\models.py:492 .\registry\models.py:1372
+msgid "Active"
+msgstr ""
+
+#: .\registry\models.py:493
+msgid "Is this part active?"
+msgstr ""
+
+#: .\registry\models.py:935
+msgid "Base Part"
+msgstr ""
+
+#: .\registry\models.py:939
+msgid "Select part"
+msgstr ""
+
+#: .\registry\models.py:957
+msgid "MPN"
+msgstr ""
+
+#: .\registry\models.py:958
+msgid "Manufacturer Part Number"
+msgstr ""
+
+#: .\registry\models.py:1057
+msgid "Select supplier"
+msgstr ""
+
+#: .\registry\models.py:1063
+msgid "Manufacturer Part"
+msgstr ""
+
+#: .\registry\models.py:1064
+msgid "Select manufacturer part"
+msgstr ""
+
+#: .\registry\models.py:1117 .\registry\models.py:1244
+msgid "Purchase Price"
+msgstr ""
+
+#: .\registry\models.py:1118 .\registry\models.py:1245
+msgid "Single unit purchase price at time of purchase"
+msgstr ""
+
+#: .\registry\models.py:1142
+msgid "FIXED WING"
+msgstr ""
+
+#: .\registry\models.py:1142
+msgid "ROTORCRAFT"
+msgstr ""
+
+#: .\registry\models.py:1142
+msgid "LIGHTER-THAN-AIR"
+msgstr ""
+
+#: .\registry\models.py:1142
+msgid "HYBRID LIFT"
+msgstr ""
+
+#: .\registry\models.py:1143
+msgid "MICRO"
+msgstr ""
+
+#: .\registry\models.py:1143
+msgid "SMALL"
+msgstr ""
+
+#: .\registry\models.py:1143
+msgid "MEIDUM"
+msgstr ""
+
+#: .\registry\models.py:1143
+msgid "Large"
+msgstr ""
+
+#: .\registry\models.py:1146
+msgid "AIRPLANE"
+msgstr ""
+
+#: .\registry\models.py:1146
+msgid "NONPOWERED GLIDER"
+msgstr ""
+
+#: .\registry\models.py:1146
+msgid "POWERED GLIDER"
+msgstr ""
+
+#: .\registry\models.py:1146
+msgid "HELICOPTER"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "GYROPLANE"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "BALLOON"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "AIRSHIP"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "UAV"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "Multirotor"
+msgstr ""
+
+#: .\registry\models.py:1147
+msgid "Hybrid"
+msgstr ""
+
+#: .\registry\models.py:1213
+msgid "Supplier Part"
+msgstr ""
+
+#: .\registry\models.py:1214
+msgid ""
+"Select a matching supplier part for this stock item, if no supplier part is "
+"set you must set a Master Component"
+msgstr ""
+
+#: .\registry\models.py:1221
+msgid "If no supplier exists, use the master component"
+msgstr ""
+
+#: .\registry\models.py:1225
+msgid "Description"
+msgstr ""
+
+#: .\registry\models.py:1226
+msgid "Specify an internal description for this component e.g: x-2"
+msgstr ""
+
+#: .\registry\models.py:1317
+msgid "In Progress"
+msgstr ""
+
+#: .\registry\models.py:1317
+msgid "Parts needed"
+msgstr ""
+
+#: .\registry\models.py:1372
+msgid "Inactive"
+msgstr ""
+
+#: .\supply_chain_operations\models.py:18
+msgid "Impacted Aicraft"
+msgstr ""
+
+#: .\supply_chain_operations\models.py:19
+msgid "Select the aircraft assocated with this event"
+msgstr ""
+
+#: .\supply_chain_operations\models.py:21
+msgid "Associate a Flight Log with this incident"
+msgstr ""
+
+#: .\supply_chain_operations\models.py:22
+msgid "Associate the components associated with this event with this incident"
+msgstr ""

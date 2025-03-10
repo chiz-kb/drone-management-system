@@ -1,12 +1,13 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 {% load crispy_forms_tags %}
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
 
-    <h2>Add a Company</h2>
-    <p>Create a new company in the database, you can then assign them to an Aircraft, Firmware etc. Some fields are mandatory and some are optional</p>
+    <h2>{% trans "Add a Company" %}</h2>
+    <p>{% trans "Create a new company in the database, you can then assign them to an Aircraft, Firmware etc. Some fields are mandatory and some are optional" %}</p>
     <form action="" method="post">
         {% csrf_token %}
         {% if form.errors %}

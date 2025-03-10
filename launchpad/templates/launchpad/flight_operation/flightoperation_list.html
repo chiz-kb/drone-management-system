@@ -1,12 +1,13 @@
-{% extends "launchpad/layout.html" %} 
+{% extends "launchpad/layout.html" %}
+{% load i18n %} 
 {% block navbreadcrumb %}
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item">
-        Trusted Flights
+        {% trans "Trusted Flights" %}
       </li>
       <li class="breadcrumb-item active" aria-current="page">
-        Operations
+        {% trans "Operations" %}
       </li>
     </ol>
   </nav>
@@ -15,8 +16,8 @@
 
 <div class="row mb-3">
     
-    <h2>Flight Operations</h2>
-    <p>See all the flight operations as a list or see them as a <i class="bi bi-calendar-date"></i>&nbsp;<a href="/launchpad/flightoperations/calendar">calendar</a></p>
+    <h2>{% trans "Flight Operations" %}</h2>
+    <p>{% trans "See all the flight operations as a list or see them as a"% } <i class="bi bi-calendar-date"></i>&nbsp;<a href="/launchpad/flightoperations/calendar">calendar</a></p>
 </div>
 <div class="row mb-3">
     <div class="col-md-8 themed-grid-col">
@@ -26,7 +27,7 @@
             <li class="list-group-item"><a href="/launchpad/flightoperations/{{flightoperation.id}}/detail">{{ flightoperation.name }}</a></li>
             {% endfor %}
         {% else %}
-            <li class="list-group-item"><p class="text-muted"><i>There are no flight operations added in Aerobridge, once added the list of flight operations will be displayed here.</i></p></li>
+            <li class="list-group-item"><p class="text-muted"><i>{% trans "There are no flight operations added in Aerobridge, once added the list of flight operations will be displayed here." %}</i></p></li>
         {% endif %}
 
         
@@ -38,7 +39,7 @@
           {% if flightoperations.links.previous %}
           
           <li class="page-item">
-            <a class="page-link" href="{{ flightoperations.links.previous }}">Previous</a>
+            <a class="page-link" href="{{ flightoperations.links.previous }}">{% trans "Previous" %}</a>
           </li>  
             
           {% else %}
@@ -68,7 +69,7 @@
       </ul>
     </nav>
     <br><br>
-    <p><a class="btn btn-primary" href="/launchpad/flightoperations/new"><b>&#43; Add a new flight operation</b></a></p>
+    <p><a class="btn btn-primary" href="/launchpad/flightoperations/new"><b>&#43; {% trans "Add a new flight operation" %}</b></a></p>
 </div>
 <div class="col-md-4 themed-grid-col"></div>
 </div>

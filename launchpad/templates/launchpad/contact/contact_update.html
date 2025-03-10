@@ -1,11 +1,12 @@
 {% extends "launchpad/layout.html" %} 
+{% load i18n %} 
 {% load rest_framework %}
 {% block content %}
 
 <div class="row mb-3">
     <div class="col-md-6 themed-grid-col">
-<h2>Contact Update</h2>
-<p>Update the details of your contacts, assign them to operators or change their role</p>
+<h2> {% trans "Contact Update" %}</h2>
+<p> {% trans "Update the details of your contacts, assign them to operators or change their role" %}</p>
 
 <form action="{% url 'contacts-detail' contact_id=contact.pk %}" method="POST">
     {% csrf_token %}
@@ -21,7 +22,7 @@
 {% endif %}
     {% render_form serializer %}
     <br>    
-    <button class="btn btn-primary" type="submit" value="Update">Update</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'contacts-list' %}" role="button">Cancel</a>
+    <button class="btn btn-primary" type="submit" value="Update"> {% trans "Update" %}</button>&nbsp;&nbsp;<a class="btn btn-secondary" href="{% url 'contacts-list' %}" role="button">Cancel</a>
     <br><br>
     <small class="text-muted">Updated at: {{ contact.updated_at|date:'Y-m-d H:i' }} </small>
 </form>
